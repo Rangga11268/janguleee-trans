@@ -1,15 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Check,
-  Users,
-  Tv,
-  Music,
-  Wifi,
-  Briefcase,
-  ArrowRight,
-} from "lucide-react";
+import { Users, Briefcase, ArrowRight } from "lucide-react";
 
 const fleets = [
   {
@@ -125,10 +117,16 @@ export default function Fleet() {
                     href={`https://wa.me/628131573731?text=Halo%20Janguleee%20Trans,%20saya%20ingin%20tanya%20tentang%20unit%20${fleet.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-brand-primary hover:text-black py-4 rounded-xl font-bold transition-all duration-300 group-hover:translate-y-[-2px]"
+                    className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-brand-primary hover:text-black py-4 rounded-xl font-bold transition-all duration-300 group-hover:translate-y-[-2px] mb-3"
                   >
                     Tanya Ketersediaan
                     <ArrowRight size={18} />
+                  </a>
+                  <a
+                    href="/facilities"
+                    className="w-full flex items-center justify-center gap-2 bg-transparent border border-white/20 text-white hover:bg-white/5 py-4 rounded-xl font-bold transition-all duration-300"
+                  >
+                    Lihat Detail Fasilitas
                   </a>
                 </div>
               </div>
