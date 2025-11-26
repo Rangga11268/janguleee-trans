@@ -10,9 +10,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-brand-primary: #ea580c; /* Orange-600 */
-  --color-brand-dark: #0f172a; /* Slate-900 */
-  --color-brand-accent: #f97316; /* Orange-500 */
+  --font-serif: var(--font-playfair);
+  --color-brand-primary: #d4af37; /* Gold */
+  --color-brand-dark: #0a0a0a; /* Deep Black */
+  --color-brand-accent: #c5a059; /* Muted Gold */
+  --color-brand-slate: #1a1a1a; /* Dark Slate for cards */
 }
 
 @media (prefers-color-scheme: dark) {

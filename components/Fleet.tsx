@@ -1,8 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Users, Tv, Music, Wifi, Briefcase } from "lucide-react";
-import Image from "next/image";
+import {
+  Check,
+  Users,
+  Tv,
+  Music,
+  Wifi,
+  Briefcase,
+  ArrowRight,
+} from "lucide-react";
 
 const fleets = [
   {
@@ -32,80 +39,85 @@ const fleets = [
 
 export default function Fleet() {
   return (
-    <section id="fleet" className="py-20 bg-gray-50 dark:bg-black">
+    <section id="fleet" className="py-24 bg-black relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-dark dark:text-white">
-            Armada <span className="text-brand-primary">Kami</span>
+        <div className="text-center mb-20">
+          <span className="text-brand-primary font-bold tracking-widest uppercase text-sm border-b border-brand-primary pb-1 mb-4 inline-block">
+            Armada Kami
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Pilihan <span className="text-brand-primary">Unit Terbaik</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Pilihan armada terbaik dengan fasilitas lengkap untuk menunjang
-            kenyamanan perjalanan Anda.
+          <p className="text-gray-400 max-w-2xl mx-auto font-light text-lg">
+            Setiap unit dirawat dengan standar tinggi untuk menjamin keamanan
+            dan kenyamanan perjalanan Anda.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           {fleets.map((fleet, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 dark:border-zinc-800"
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="group bg-brand-slate rounded-3xl overflow-hidden border border-white/5 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
             >
-              <div className="relative h-64 w-full overflow-hidden group">
+              <div className="relative h-72 w-full overflow-hidden">
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{ backgroundImage: `url('${fleet.image}')` }}
                 />
-                <div className="absolute top-4 right-4 bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-slate via-transparent to-transparent opacity-90" />
+                <div className="absolute top-6 right-6 bg-brand-primary/90 backdrop-blur-sm text-black text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider shadow-lg">
                   {fleet.body}
+                </div>
+                <div className="absolute bottom-6 left-6">
+                  <h3 className="text-3xl font-bold text-white mb-1 group-hover:text-brand-primary transition-colors">
+                    {fleet.name}
+                  </h3>
+                  <p className="text-gray-300 font-medium">{fleet.highlight}</p>
                 </div>
               </div>
 
               <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-brand-dark dark:text-white mb-1">
-                      {fleet.name}
-                    </h3>
-                    <p className="text-brand-primary font-medium text-sm">
-                      {fleet.highlight}
-                    </p>
+                <div className="flex items-center gap-3 mb-8 bg-black/30 p-4 rounded-xl border border-white/5">
+                  <div className="p-2 bg-brand-primary/20 rounded-lg text-brand-primary">
+                    <Users size={20} />
                   </div>
-                  <div className="flex items-center gap-1 bg-gray-100 dark:bg-zinc-800 px-3 py-1 rounded-lg">
-                    <Users size={16} className="text-gray-500" />
-                    <span className="font-bold text-brand-dark dark:text-white">
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-wide">
+                      Kapasitas
+                    </p>
+                    <p className="font-bold text-white text-lg">
                       {fleet.capacity}
-                    </span>
+                    </p>
                   </div>
                 </div>
 
-                <div className="space-y-4 mb-8">
-                  <div className="text-sm text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">
-                    Fasilitas
+                <div className="space-y-6 mb-10">
+                  <div className="text-sm text-brand-primary font-bold uppercase tracking-widest">
+                    Fasilitas Unggulan
                   </div>
-                  <ul className="grid grid-cols-2 gap-3">
+                  <ul className="grid grid-cols-2 gap-4">
                     {fleet.facilities.map((facility, idx) => (
                       <li
                         key={idx}
-                        className="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm"
+                        className="flex items-center gap-3 text-gray-300 text-sm group/item"
                       >
-                        <Check
-                          size={16}
-                          className="text-brand-primary flex-shrink-0"
-                        />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-primary group-hover/item:scale-150 transition-transform" />
                         {facility}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-6 border-t border-gray-100 dark:border-zinc-800">
-                  <p className="text-sm text-gray-500 mb-4">
+                <div className="pt-6 border-t border-white/5">
+                  <p className="text-sm text-gray-500 mb-6 flex items-center gap-2">
+                    <Briefcase size={16} />
                     Cocok untuk:{" "}
-                    <span className="text-brand-dark dark:text-gray-300 font-medium">
+                    <span className="text-gray-300 font-medium">
                       {fleet.purpose}
                     </span>
                   </p>
@@ -113,9 +125,10 @@ export default function Fleet() {
                     href={`https://wa.me/628131573731?text=Halo%20Janguleee%20Trans,%20saya%20ingin%20tanya%20tentang%20unit%20${fleet.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full text-center bg-brand-dark hover:bg-brand-primary text-white py-3 rounded-xl font-semibold transition-colors"
+                    className="w-full flex items-center justify-center gap-2 bg-white text-black hover:bg-brand-primary hover:text-black py-4 rounded-xl font-bold transition-all duration-300 group-hover:translate-y-[-2px]"
                   >
                     Tanya Ketersediaan
+                    <ArrowRight size={18} />
                   </a>
                 </div>
               </div>

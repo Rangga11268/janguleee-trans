@@ -40,39 +40,54 @@ const services = [
     description:
       "Tim support kami siap membantu reservasi dan pertanyaan Anda kapan saja.",
   },
+  {
+    icon: <Shield size={32} />,
+    title: "Asuransi Perjalanan",
+    description:
+      "Setiap penumpang dilindungi asuransi Jasa Raharja untuk ketenangan pikiran.",
+  },
+  {
+    icon: <Award size={32} />,
+    title: "Harga Kompetitif",
+    description:
+      "Dapatkan layanan premium dengan harga terbaik dan transparan.",
+  },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-white dark:bg-zinc-900">
+    <section id="services" className="py-24 bg-brand-dark relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-dark dark:text-white">
-            Mengapa Memilih <span className="text-brand-primary">Kami?</span>
+        <div className="text-center mb-20">
+          <span className="text-brand-primary font-bold tracking-widest uppercase text-sm border-b border-brand-primary pb-1 mb-4 inline-block">
+            Layanan Kami
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Standard <span className="text-brand-primary">Pelayanan</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto font-light text-lg">
             Komitmen kami untuk memberikan pengalaman perjalanan terbaik bagi
             setiap pelanggan.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.slice(0, 8).map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-2xl bg-gray-50 dark:bg-zinc-800 hover:bg-white dark:hover:bg-zinc-700 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-brand-primary/20 group"
+              className="p-8 rounded-2xl bg-brand-slate hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-brand-primary/30 group"
             >
-              <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-black transition-all duration-300 group-hover:scale-110">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-brand-dark dark:text-white">
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">
                 {service.description}
               </p>
             </motion.div>

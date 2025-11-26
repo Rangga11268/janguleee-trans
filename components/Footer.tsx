@@ -1,31 +1,43 @@
 "use client";
 
-import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Phone,
+  Mail,
+  MapPin,
+  ArrowUp,
+} from "lucide-react";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-8">
+    <footer className="bg-black text-white pt-20 pb-10 border-t border-white/10">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Info */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">
+            <h2 className="text-3xl font-bold mb-6 tracking-tighter">
               Janguleee<span className="text-brand-primary">Trans</span>
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-6">
+            <p className="text-gray-400 leading-relaxed mb-8 font-light">
               Sahabat perjalanan wisata Anda. Melayani dengan sepenuh hati,
-              mengutamakan keselamatan dan kenyamanan.
+              mengutamakan keselamatan dan kenyamanan di setiap kilometer
+              perjalanan.
             </p>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors"
+                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-black hover:border-brand-primary transition-all duration-300"
               >
                 <Instagram size={20} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors"
+                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-black hover:border-brand-primary transition-all duration-300"
               >
                 <Facebook size={20} />
               </a>
@@ -34,39 +46,41 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 border-b border-brand-primary/30 pb-2 inline-block">
-              Menu
-            </h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-bold mb-8 text-white">Menu Utama</h3>
+            <ul className="space-y-4">
               <li>
                 <a
                   href="#home"
-                  className="text-gray-400 hover:text-brand-primary transition-colors"
+                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
                 >
+                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Beranda
                 </a>
               </li>
               <li>
                 <a
                   href="#about"
-                  className="text-gray-400 hover:text-brand-primary transition-colors"
+                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
                 >
+                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Tentang Kami
                 </a>
               </li>
               <li>
                 <a
                   href="#fleet"
-                  className="text-gray-400 hover:text-brand-primary transition-colors"
+                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
                 >
+                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Armada
                 </a>
               </li>
               <li>
                 <a
                   href="#services"
-                  className="text-gray-400 hover:text-brand-primary transition-colors"
+                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
                 >
+                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Layanan
                 </a>
               </li>
@@ -75,19 +89,18 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-6 border-b border-brand-primary/30 pb-2 inline-block">
-              Hubungi Kami
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-400">
-                <MapPin
-                  size={20}
-                  className="text-brand-primary flex-shrink-0 mt-1"
-                />
-                <span>Sumedang, Jawa Barat, Indonesia</span>
+            <h3 className="text-lg font-bold mb-8 text-white">Hubungi Kami</h3>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4 text-gray-400 group">
+                <div className="p-2 bg-white/5 rounded-lg text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors">
+                  <MapPin size={20} />
+                </div>
+                <span className="mt-1">Sumedang, Jawa Barat, Indonesia</span>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Phone size={20} className="text-brand-primary flex-shrink-0" />
+              <li className="flex items-center gap-4 text-gray-400 group">
+                <div className="p-2 bg-white/5 rounded-lg text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors">
+                  <Phone size={20} />
+                </div>
                 <a
                   href="https://wa.me/628131573731"
                   className="hover:text-white transition-colors"
@@ -95,8 +108,10 @@ export default function Footer() {
                   +62 813-1573-731
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Mail size={20} className="text-brand-primary flex-shrink-0" />
+              <li className="flex items-center gap-4 text-gray-400 group">
+                <div className="p-2 bg-white/5 rounded-lg text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors">
+                  <Mail size={20} />
+                </div>
                 <span className="hover:text-white transition-colors">
                   info@janguleeetrans.com
                 </span>
@@ -106,28 +121,33 @@ export default function Footer() {
 
           {/* CTA */}
           <div>
-            <h3 className="text-lg font-bold mb-6 border-b border-brand-primary/30 pb-2 inline-block">
-              Reservasi
-            </h3>
-            <p className="text-gray-400 mb-4">
-              Segera rencanakan perjalanan Anda bersama kami.
+            <h3 className="text-lg font-bold mb-8 text-white">Reservasi</h3>
+            <p className="text-gray-400 mb-6 font-light">
+              Segera rencanakan perjalanan Anda bersama kami. Dapatkan penawaran
+              terbaik sekarang.
             </p>
             <a
               href="https://wa.me/628131573731"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-brand-primary hover:bg-brand-accent text-white px-6 py-3 rounded-lg font-semibold transition-colors w-full text-center"
+              className="inline-block bg-brand-primary hover:bg-brand-accent text-black px-8 py-4 rounded-xl font-bold transition-all w-full text-center shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]"
             >
               Hubungi via WhatsApp
             </a>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
-          <p>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-500 text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()} Jang Uleee Bungsuna Transport. All
             rights reserved.
           </p>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-sm text-gray-400 hover:text-brand-primary transition-colors"
+          >
+            Kembali ke Atas <ArrowUp size={16} />
+          </button>
         </div>
       </div>
     </footer>
