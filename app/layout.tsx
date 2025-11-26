@@ -1,44 +1,38 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Playfair_Display } from "next/font/google";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+import NoiseTexture from "@/components/NoiseTexture";
+import Preloader from "@/components/Preloader";
 
 const playfair = Playfair_Display({
-  variable: "--font-playfair",
   subsets: ["latin"],
+  variable: "--font-serif",
 });
 
-export const metadata: Metadata = {
-  title: "Janguleee Trans - Sahabat Perjalanan Wisata Anda",
+export const metadata = {
+  title: "Janguleee Trans - Sewa Bus Pariwisata Mewah",
   description:
-    "Layanan sewa bus pariwisata premium di Sumedang dengan armada Jetbus 5 terbaru. Aman, nyaman, dan terpercaya.",
+    "Layanan sewa bus pariwisata premium dengan fasilitas terlengkap dan armada terbaru.",
   icons: {
     icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
-      >
+    <html lang="id" className={`${playfair.variable}`}>
+      <body className="antialiased bg-black text-white selection:bg-brand-primary selection:text-black">
+        <Preloader />
+        <SmoothScroll />
+        <CustomCursor />
+        <NoiseTexture />
         {children}
         <FloatingWhatsApp />
       </body>

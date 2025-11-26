@@ -88,31 +88,38 @@ export default function FacilitiesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[300px]">
             {facilityImages.map((item, index) => (
               <div
                 key={index}
-                className="group rounded-2xl overflow-hidden bg-brand-slate border border-white/5 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+                className={`group relative rounded-3xl overflow-hidden border border-white/5 hover:border-brand-primary/50 transition-all duration-700 hover:shadow-[0_0_40px_rgba(212,175,55,0.1)] ${
+                  index === 0 || index === 7
+                    ? "md:col-span-2 md:row-span-2"
+                    : index === 3 || index === 4
+                    ? "md:col-span-2"
+                    : ""
+                }`}
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-brand-primary transition-colors">
-                      {item.title}
-                    </h3>
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
+
+                <div className="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-2">
+                    <div className="flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                      <CheckCircle size={14} />
+                      <span>Premium Feature</span>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-400 text-sm mb-4">{item.desc}</p>
-                  <div className="flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-wider">
-                    <CheckCircle size={14} />
-                    <span>Tersedia di Semua Unit</span>
-                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2 font-serif group-hover:text-brand-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 transform translate-y-4 group-hover:translate-y-0">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             ))}
