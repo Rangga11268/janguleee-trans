@@ -35,6 +35,28 @@ export default function RootLayout({
         <NoiseTexture />
         {children}
         <FloatingWhatsApp />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Jang Uleee Bungsuna Transport",
+              image: "https://janguleee-trans.com/icon.png",
+              description:
+                "Layanan sewa bus pariwisata premium di Sumedang dengan armada Jetbus 5 terbaru.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Sumedang",
+                addressRegion: "Jawa Barat",
+                addressCountry: "ID",
+              },
+              url: "https://janguleee-trans.com",
+              telephone: "+628131573731",
+              priceRange: "$$",
+            }),
+          }}
+        />
       </body>
     </html>
   );

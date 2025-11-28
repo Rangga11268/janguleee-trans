@@ -1,54 +1,19 @@
-Panduan Teknis & Konten Website Janguleee Trans
+## Error Type
+Runtime Error
 
-Klien: Ang Uleee Bungsuna Transport (Janguleee Trans)
-Stack: Next.js (App Router), Tailwind CSS, Framer Motion.
+## Error Message
+window is not defined
 
-Dokumen ini berisi data perusahaan yang wajib dimasukkan ke dalam website serta instruksi teknis instalasi untuk programmer.
 
-BAGIAN 1: DETAIL KONTEN (Wajib Diinput)
+    at Hero (components\Hero.tsx:11:38)
 
-Programmer wajib menggunakan data berikut untuk teks di dalam website (Hardcode atau Config):
+## Code Frame
+   9 |   const y = useMotionValue(0);
+  10 |
+> 11 |   const mouseX = useTransform(x, [0, window.innerWidth], [-20, 20]);
+     |                                      ^
+  12 |   const mouseY = useTransform(y, [0, window.innerHeight], [-20, 20]);
+  13 |
+  14 |   const handleMouseMove = (e: React.MouseEvent) => {
 
-1. Identitas Perusahaan
-
-Nama Brand: Janguleee Trans
-
-Nama Lengkap: Jang Uleee Bungsuna Transport
-
-Lokasi: Sumedang, Jawa Barat
-
-Warna Brand: Oranye / Merah Tembaga (Sesuai Livery Bus)
-
-2. Kontak & Reservasi
-
-Nomor WhatsApp: +62 813-1573-731
-
-Link WhatsApp: https://wa.me/628131573731
-
-Call to Action Text: "Reservasi", "Booking Sekarang", "Hubungi Kami".
-
-3. Data Armada (Unit)
-
-Pastikan spesifikasi ini tertulis dengan tepat di bagian "Armada":
-
-Unit A: Big Bus (Standard)
-
-Body: Jetbus 5
-
-Kapasitas: 50 Seat
-
-Fasilitas: Full AC, Audio System, Karaoke, Bagasi Luas.
-
-Peruntukan: Wisata rombongan besar, Study Tour.
-
-Unit B: Big Bus (Executive)
-
-Body: Jetbus 5
-
-Kapasitas: 32 Seat
-
-Fitur Unggulan: Legrest (Sandaran Kaki).
-
-Fasilitas: Android TV, Premium Audio, USB Charger.
-
-Peruntukan: Perjalanan jarak jauh, VIP.
+Next.js version: 16.0.4 (Turbopack)

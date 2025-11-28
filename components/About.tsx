@@ -21,31 +21,61 @@ export default function About() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, staggerChildren: 0.2 }}
             className="lg:w-1/2"
           >
-            <div className="inline-block mb-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-block mb-4"
+            >
               <span className="text-brand-primary font-bold tracking-widest uppercase text-sm border-b border-brand-primary pb-1">
                 Tentang Kami
               </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight"
+            >
               Mengapa Memilih <br />
               <span className="text-brand-primary">Janguleee Trans?</span>
-            </h2>
-            <p className="text-lg text-gray-400 mb-6 leading-relaxed font-light">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg text-gray-400 mb-6 leading-relaxed font-light"
+            >
               Kami bukan sekadar penyedia transportasi, kami adalah mitra
               perjalanan Anda. Berbasis di Sumedang, Jang Uleee Bungsuna
               Transport hadir dengan standar baru dalam layanan bus pariwisata.
-            </p>
-            <p className="text-lg text-gray-400 mb-10 leading-relaxed font-light">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-lg text-gray-400 mb-10 leading-relaxed font-light"
+            >
               Armada Jetbus 5 terbaru kami dirancang untuk memberikan kenyamanan
               maksimal, didukung oleh kru profesional yang siap melayani dengan
               sepenuh hati.
-            </p>
+            </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-primary/30 transition-colors">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-primary/30 transition-colors"
+              >
                 <div className="p-3 bg-brand-primary/10 rounded-lg text-brand-primary">
                   <MapPin size={24} />
                 </div>
@@ -55,8 +85,14 @@ export default function About() {
                   </h4>
                   <p className="text-sm text-gray-500">Sumedang, Jawa Barat</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-primary/30 transition-colors">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-brand-primary/30 transition-colors"
+              >
                 <div className="p-3 bg-brand-primary/10 rounded-lg text-brand-primary">
                   <ShieldCheck size={24} />
                 </div>
@@ -68,7 +104,7 @@ export default function About() {
                     Standar Keamanan Tinggi
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 

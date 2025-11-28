@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Shield, Clock, Award, Headphones, Map, Smile } from "lucide-react";
+import SpotlightCard from "./SpotlightCard";
 
 const services = [
   {
@@ -79,17 +80,18 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-2xl bg-brand-slate hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-brand-primary/30 group"
             >
-              <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-black transition-all duration-300 group-hover:scale-110">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">
-                {service.description}
-              </p>
+              <SpotlightCard className="p-8 h-full group">
+                <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-black transition-all duration-300 group-hover:scale-110">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">
+                  {service.description}
+                </p>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

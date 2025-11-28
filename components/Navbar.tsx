@@ -29,12 +29,17 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-black/80 backdrop-blur-md py-2 shadow-lg border-b border-white/5"
-          : "bg-transparent py-6"
+          ? "bg-black/80 backdrop-blur-md py-4 shadow-lg border-b border-white/5"
+          : "bg-transparent py-8"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <Link href="/" className="relative h-12 w-40">
+        <Link
+          href="/"
+          className={`relative transition-all duration-500 ${
+            scrolled ? "h-10 w-32" : "h-12 w-40"
+          }`}
+        >
           <Image
             src="/assets/img/logonobg.png"
             alt="Janguleee Trans Logo"

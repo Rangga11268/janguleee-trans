@@ -7,7 +7,9 @@ import {
   Mail,
   MapPin,
   ArrowUp,
+  ArrowRight,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -15,19 +17,47 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white pt-20 pb-10 border-t border-white/10">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-black text-white pt-32 pb-10 border-t border-white/10 relative overflow-hidden">
+      {/* Massive Background Text */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03]">
+        <h1 className="text-[20vw] font-bold text-white leading-none whitespace-nowrap">
+          JANGULEEE
+        </h1>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Massive CTA */}
+        <div className="mb-32 border-b border-white/10 pb-20">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 leading-tight">
+            Siap untuk <br />
+            <span className="text-brand-primary">Perjalanan Mewah?</span>
+          </h2>
+          <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
+            <a
+              href="https://wa.me/628131573731"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white text-black px-10 py-6 rounded-full font-bold text-xl transition-all hover:bg-brand-primary flex items-center gap-4"
+            >
+              Booking Sekarang
+              <ArrowRight
+                size={24}
+                className="group-hover:translate-x-2 transition-transform"
+              />
+            </a>
+            <p className="text-gray-400 max-w-md text-lg font-light">
+              Hubungi kami sekarang untuk mendapatkan penawaran terbaik untuk
+              perjalanan wisata Anda.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Brand Info */}
           <div>
-            <h2 className="text-3xl font-bold mb-6 tracking-tighter">
+            <h3 className="text-2xl font-bold mb-8 tracking-tighter">
               Janguleee<span className="text-brand-primary">Trans</span>
-            </h2>
-            <p className="text-gray-400 leading-relaxed mb-8 font-light">
-              Sahabat perjalanan wisata Anda. Melayani dengan sepenuh hati,
-              mengutamakan keselamatan dan kenyamanan di setiap kilometer
-              perjalanan.
-            </p>
+            </h3>
             <div className="flex gap-4">
               <a
                 href="#"
@@ -46,41 +76,39 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-8 text-white">Menu Utama</h3>
-            <ul className="space-y-4">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-8">
+              Menu
+            </h4>
+            <ul className="space-y-4 text-lg">
               <li>
                 <a
                   href="#home"
-                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
+                  className="text-white hover:text-brand-primary transition-colors"
                 >
-                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Beranda
                 </a>
               </li>
               <li>
                 <a
                   href="#about"
-                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
+                  className="text-white hover:text-brand-primary transition-colors"
                 >
-                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Tentang Kami
                 </a>
               </li>
               <li>
                 <a
                   href="#fleet"
-                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
+                  className="text-white hover:text-brand-primary transition-colors"
                 >
-                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Armada
                 </a>
               </li>
               <li>
                 <a
                   href="#services"
-                  className="text-gray-400 hover:text-brand-primary transition-colors flex items-center gap-2"
+                  className="text-white hover:text-brand-primary transition-colors"
                 >
-                  <span className="w-1 h-1 bg-brand-primary rounded-full"></span>
                   Layanan
                 </a>
               </li>
@@ -89,18 +117,18 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-8 text-white">Hubungi Kami</h3>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-8">
+              Kontak
+            </h4>
             <ul className="space-y-6">
-              <li className="flex items-start gap-4 text-gray-400 group">
-                <div className="p-2 bg-white/5 rounded-lg text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors">
-                  <MapPin size={20} />
-                </div>
-                <span className="mt-1">Sumedang, Jawa Barat, Indonesia</span>
+              <li className="flex items-start gap-4 text-gray-300 group">
+                <MapPin size={24} className="text-brand-primary shrink-0" />
+                <span className="leading-relaxed">
+                  Sumedang, Jawa Barat, Indonesia
+                </span>
               </li>
-              <li className="flex items-center gap-4 text-gray-400 group">
-                <div className="p-2 bg-white/5 rounded-lg text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors">
-                  <Phone size={20} />
-                </div>
+              <li className="flex items-center gap-4 text-gray-300 group">
+                <Phone size={24} className="text-brand-primary shrink-0" />
                 <a
                   href="https://wa.me/628131573731"
                   className="hover:text-white transition-colors"
@@ -108,10 +136,8 @@ export default function Footer() {
                   +62 813-1573-731
                 </a>
               </li>
-              <li className="flex items-center gap-4 text-gray-400 group">
-                <div className="p-2 bg-white/5 rounded-lg text-brand-primary group-hover:bg-brand-primary group-hover:text-black transition-colors">
-                  <Mail size={20} />
-                </div>
+              <li className="flex items-center gap-4 text-gray-300 group">
+                <Mail size={24} className="text-brand-primary shrink-0" />
                 <span className="hover:text-white transition-colors">
                   info@janguleeetrans.com
                 </span>
@@ -119,34 +145,39 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CTA */}
+          {/* Legal */}
           <div>
-            <h3 className="text-lg font-bold mb-8 text-white">Reservasi</h3>
-            <p className="text-gray-400 mb-6 font-light">
-              Segera rencanakan perjalanan Anda bersama kami. Dapatkan penawaran
-              terbaik sekarang.
-            </p>
-            <a
-              href="https://wa.me/628131573731"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-brand-primary hover:bg-brand-accent text-black px-8 py-4 rounded-xl font-bold transition-all w-full text-center shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]"
-            >
-              Hubungi via WhatsApp
-            </a>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-8">
+              Legal
+            </h4>
+            <ul className="space-y-4 text-gray-400">
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/10">
           <p className="text-gray-500 text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()} Jang Uleee Bungsuna Transport. All
             rights reserved.
           </p>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-brand-primary transition-colors"
+            className="group flex items-center gap-2 text-sm text-white hover:text-brand-primary transition-colors uppercase tracking-widest font-bold"
           >
-            Kembali ke Atas <ArrowUp size={16} />
+            Kembali ke Atas
+            <span className="p-2 rounded-full bg-white/10 group-hover:bg-brand-primary group-hover:text-black transition-all">
+              <ArrowUp size={16} />
+            </span>
           </button>
         </div>
       </div>
