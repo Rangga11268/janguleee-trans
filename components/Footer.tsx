@@ -57,6 +57,9 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold mb-8 tracking-tighter">
               Janguleee<span className="text-brand-primary">Trans</span>
+              <span className="block text-xs font-normal text-brand-primary tracking-[0.3em] mt-1 opacity-80">
+                #BocahIngusan
+              </span>
             </h3>
             <div className="flex gap-4">
               <a

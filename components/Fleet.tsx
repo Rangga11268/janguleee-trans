@@ -7,6 +7,25 @@ import Image from "next/image";
 
 const fleets = [
   {
+    name: "Premium R25",
+    body: "R25 - SCANIA K450CB",
+    capacity: "Adjustable Seat (27 - 50)",
+    image: "/assets/img/peremium/R25.jpg",
+    video: "/assets/video/R251.mp4",
+    facilities: [
+      "Kursi Premium Reclining",
+      "Toilet & Dispenser",
+      'Android TV 32"',
+      "Premium Audio System",
+      "USB Charger Setiap Seat",
+      "LED Interior",
+    ],
+    purpose: "VIP Executive, Perjalanan Jarak Jauh Premium",
+    highlight: "Unit Terbaru & Termewah",
+    isPremium: true,
+    isNew: true,
+  },
+  {
     name: "Big Bus (Standard)",
     body: "Jetbus 5",
     capacity: "50 Seat",
@@ -71,22 +90,61 @@ function FleetCard({ fleet, index }: { fleet: any; index: number }) {
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group bg-brand-slate rounded-3xl overflow-hidden border border-white/5 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)] perspective-1000"
+      className={`group bg-brand-slate rounded-3xl overflow-hidden border transition-all duration-500 perspective-1000 ${
+        fleet.isPremium
+          ? "border-brand-primary/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[0_0_50px_rgba(212,175,55,0.3)] scale-[1.02] hover:scale-[1.03]"
+          : "border-white/5 hover:border-brand-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+      }`}
     >
       <div className="relative h-72 w-full overflow-hidden transform-style-3d">
         <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
-          <Image
-            src={fleet.image}
-            alt={fleet.name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          {fleet.video ? (
+            <>
+              <Image
+                src={fleet.image}
+                alt={fleet.name}
+                fill
+                className="object-cover group-hover:opacity-0 transition-opacity duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              <video
+                src={fleet.video}
+                muted
+                loop
+                playsInline
+                autoPlay
+                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              />
+            </>
+          ) : (
+            <Image
+              src={fleet.image}
+              alt={fleet.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-slate via-transparent to-transparent opacity-90" />
-        <div className="absolute top-6 right-6 bg-brand-primary/90 backdrop-blur-sm text-black text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider shadow-lg translate-z-20">
-          {fleet.body}
+
+        {/* Badges */}
+        <div className="absolute top-6 right-6 flex gap-2 flex-col items-end">
+          {fleet.isNew && (
+            <div className="bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg animate-pulse">
+              NEW
+            </div>
+          )}
+          {fleet.isPremium && (
+            <div className="bg-gradient-to-r from-yellow-400 to-brand-primary text-black text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+              ⭐ PREMIUM
+            </div>
+          )}
+          <div className="bg-brand-primary/90 backdrop-blur-sm text-black text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider shadow-lg translate-z-20">
+            {fleet.body}
+          </div>
         </div>
+
         <div className="absolute bottom-6 left-6 translate-z-20">
           <h3 className="text-3xl font-bold text-white mb-1 group-hover:text-brand-primary transition-colors">
             {fleet.name}
@@ -169,10 +227,24 @@ export default function Fleet() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-          {fleets.map((fleet, index) => (
-            <FleetCard key={index} fleet={fleet} index={index} />
-          ))}
+        <div className="space-y-10">
+          {/* Premium Featured Unit */}
+          {fleets
+            .filter((f) => f.isPremium)
+            .map((fleet, index) => (
+              <div key={index} className="mb-12">
+                <FleetCard fleet={fleet} index={index} />
+              </div>
+            ))}
+
+          {/* Standard Units Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+            {fleets
+              .filter((f) => !f.isPremium)
+              .map((fleet, index) => (
+                <FleetCard key={index} fleet={fleet} index={index + 1} />
+              ))}
+          </div>
         </div>
       </div>
     </section>

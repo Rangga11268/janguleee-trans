@@ -34,19 +34,27 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <Link
-          href="/"
-          className={`relative transition-all duration-500 ${
-            scrolled ? "h-10 w-32" : "h-12 w-40"
-          }`}
-        >
-          <Image
-            src="/assets/img/logonobg.png"
-            alt="Janguleee Trans Logo"
-            fill
-            className="object-contain object-left"
-            priority
-          />
+        <Link href="/" className="flex flex-col items-start group">
+          <div
+            className={`relative transition-all duration-500 ${
+              scrolled ? "h-8 w-28" : "h-12 w-40"
+            }`}
+          >
+            <Image
+              src="/assets/img/logonobg.png"
+              alt="Janguleee Trans Logo"
+              fill
+              className="object-contain object-left"
+              priority
+            />
+          </div>
+          <span
+            className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-white to-brand-primary bg-[length:200%_auto] animate-shimmer ${
+              scrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 mt-1"
+            }`}
+          >
+            #BocahIngusan
+          </span>
         </Link>
 
         {/* Desktop Menu */}
