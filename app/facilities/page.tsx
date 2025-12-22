@@ -1,7 +1,8 @@
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle, ArrowLeft } from "lucide-react";
 
 const facilityImages = [
   {
@@ -75,6 +76,19 @@ export default function FacilitiesPage() {
         subtitle="Kenyamanan & Keamanan Tanpa Kompromi"
         image="/assets/img/fasilitas/kursipremium.jpg"
       />
+
+      <div className="container mx-auto px-4 -mt-12 relative z-20 mb-12">
+        <Link
+          href="/fleet"
+          className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/10 text-white px-6 py-3 rounded-full font-medium hover:bg-brand-primary hover:text-black hover:border-brand-primary transition-all duration-300 transform hover:scale-105 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] group"
+        >
+          <ArrowLeft
+            size={20}
+            className="group-hover:-translate-x-1 transition-transform duration-300"
+          />
+          <span className="tracking-wide">Kembali ke Armada</span>
+        </Link>
+      </div>
 
       <section className="py-24 bg-brand-dark">
         <div className="container mx-auto px-4">

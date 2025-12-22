@@ -93,30 +93,71 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10"
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden fixed inset-0 top-[0px] bg-black/98 backdrop-blur-3xl z-40 flex flex-col justify-center items-center"
           >
-            <div className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-brand-primary py-2 font-medium tracking-wide border-b border-white/5"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <a
-                href="https://wa.me/628131573731"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-brand-primary text-center text-black px-6 py-3 rounded-lg font-bold mt-4"
+            <div className="absolute top-8 right-8">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-white/60 hover:text-white transition-colors"
               >
-                Reservasi Sekarang
-              </a>
+                <X size={32} />
+              </button>
             </div>
+
+            <motion.div
+              className="flex flex-col items-center gap-8 w-full max-w-sm px-6"
+              initial="hidden"
+              animate="show"
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
+              {navLinks.map((link) => (
+                <motion.div
+                  key={link.name}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                  className="w-full text-center"
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-2xl font-serif text-white hover:text-brand-primary transition-colors duration-300 py-2"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 },
+                }}
+                className="w-full pt-8"
+              >
+                <a
+                  href="https://wa.me/628131573731"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-brand-primary text-black w-full py-4 rounded-full font-bold text-lg hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                >
+                  <Phone size={20} />
+                  Reservasi Sekarang
+                </a>
+              </motion.div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

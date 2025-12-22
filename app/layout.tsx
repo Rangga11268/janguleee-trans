@@ -3,7 +3,6 @@ import "./globals.css";
 import { Playfair_Display } from "next/font/google";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 import NoiseTexture from "@/components/NoiseTexture";
 import Preloader from "@/components/Preloader";
 
@@ -31,7 +30,6 @@ export default function RootLayout({
       <body className="antialiased bg-black text-white selection:bg-brand-primary selection:text-black">
         <Preloader />
         <SmoothScroll />
-        <CustomCursor />
         <NoiseTexture />
         {children}
         <FloatingWhatsApp />
