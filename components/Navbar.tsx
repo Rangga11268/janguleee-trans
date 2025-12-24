@@ -39,7 +39,7 @@ export default function Navbar() {
         <Link href="/" className="flex flex-col items-start group">
           <div
             className={`relative transition-all duration-500 ${
-              scrolled ? "h-8 w-28" : "h-12 w-40"
+              scrolled ? "h-8 w-28" : "h-14 w-48"
             }`}
           >
             <Image
@@ -51,8 +51,8 @@ export default function Navbar() {
             />
           </div>
           <span
-            className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-white to-brand-primary bg-[length:200%_auto] animate-shimmer ${
-              scrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 mt-1"
+            className={`text-xs font-bold tracking-[0.3em] uppercase transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-white to-brand-primary bg-[length:200%_auto] animate-shimmer ${
+              scrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 mt-2"
             }`}
           >
             #BocahIngusan

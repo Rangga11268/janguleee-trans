@@ -92,11 +92,11 @@ export default function FacilitiesPage() {
 
       <section className="py-24 bg-brand-dark">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-6 font-serif">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif">
               Galeri <span className="text-brand-primary">Fasilitas</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light leading-relaxed">
               Setiap armada kami dilengkapi dengan fasilitas premium untuk
               menjamin kenyamanan dan keselamatan Anda selama perjalanan.
             </p>
@@ -106,7 +106,7 @@ export default function FacilitiesPage() {
             {facilityImages.map((item, index) => (
               <div
                 key={index}
-                className={`group relative rounded-3xl overflow-hidden border border-white/5 hover:border-brand-primary/50 transition-all duration-700 hover:shadow-[0_0_40px_rgba(212,175,55,0.1)] ${
+                className={`group relative rounded-3xl overflow-hidden border border-white/10 hover:border-brand-primary/50 transition-all duration-700 hover:shadow-[0_0_50px_rgba(212,175,55,0.2)] ${
                   index === 0 || index === 7
                     ? "md:col-span-2 md:row-span-2"
                     : index === 3 || index === 4
@@ -123,7 +123,7 @@ export default function FacilitiesPage() {
 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-2">
-                    <div className="flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-wider backdrop-blur-md bg-black/30 w-fit px-3 py-1 rounded-full border border-brand-primary/30">
                       <CheckCircle size={14} />
                       <span>Premium Feature</span>
                     </div>
