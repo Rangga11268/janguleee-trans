@@ -27,9 +27,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
         scrolled
-          ? "bg-black/80 backdrop-blur-md py-4 shadow-lg border-b border-white/5"
+          ? "bg-black/60 backdrop-blur-2xl py-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)] border-b border-white/5 supports-[backdrop-filter]:bg-black/40"
           : "bg-transparent py-8"
       }`}
     >
@@ -72,9 +72,9 @@ export default function Navbar() {
             href="https://wa.me/628131573731"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-brand-primary hover:bg-brand-accent text-black px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+            className="bg-gradient-to-r from-brand-primary to-brand-accent hover:to-white text-black px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-[0_0_25px_rgba(229,197,114,0.4)] hover:shadow-[0_0_40px_rgba(229,197,114,0.6)] duration-500 text-sm tracking-widest uppercase"
           >
-            <Phone size={18} />
+            <Phone size={16} />
             Reservasi
           </a>
         </div>

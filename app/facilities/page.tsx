@@ -106,7 +106,7 @@ export default function FacilitiesPage() {
             {facilityImages.map((item, index) => (
               <div
                 key={index}
-                className={`group relative rounded-3xl overflow-hidden border border-white/5 hover:border-brand-primary/50 transition-all duration-700 hover:shadow-[0_0_40px_rgba(212,175,55,0.1)] ${
+                className={`group relative rounded-[2.5rem] overflow-hidden border border-white/5 hover:border-brand-primary/40 transition-all duration-700 hover:shadow-[0_0_50px_rgba(229,197,114,0.15)] ${
                   index === 0 || index === 7
                     ? "md:col-span-2 md:row-span-2"
                     : index === 3 || index === 4

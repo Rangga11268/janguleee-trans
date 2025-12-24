@@ -90,10 +90,10 @@ function FleetCard({ fleet, index }: { fleet: any; index: number }) {
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`group bg-brand-slate rounded-3xl overflow-hidden border transition-all duration-500 perspective-1000 ${
+      className={`group bg-brand-slate rounded-[2.5rem] overflow-hidden border transition-all duration-700 perspective-1000 ${
         fleet.isPremium
-          ? "border-brand-primary/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[0_0_50px_rgba(212,175,55,0.3)] scale-[1.02] hover:scale-[1.03]"
-          : "border-white/5 hover:border-brand-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+          ? "border-brand-primary/40 shadow-[0_0_50px_rgba(229,197,114,0.15)] hover:shadow-[0_0_80px_rgba(229,197,114,0.3)] scale-[1.02] hover:scale-[1.03]"
+          : "border-white/5 hover:border-brand-primary/30 hover:shadow-[0_0_40px_rgba(229,197,114,0.1)]"
       }`}
     >
       <div className="relative h-72 w-full overflow-hidden transform-style-3d">

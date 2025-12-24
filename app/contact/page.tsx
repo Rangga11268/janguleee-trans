@@ -79,7 +79,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-brand-slate p-10 rounded-3xl border border-white/5">
+            <div className="bg-brand-slate p-12 rounded-[2.5rem] border border-white/5 hover:border-brand-primary/30 transition-all duration-500 shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-brand-primary/10 transition-colors duration-700" />
               <h3 className="text-2xl font-bold text-white mb-6 font-serif">
                 Kirim Pesan
               </h3>

@@ -54,7 +54,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight overflow-hidden">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-tight tracking-tight overflow-hidden font-serif">
             <div className="flex justify-center gap-2 md:gap-4 flex-wrap">
               {"Jang Uleee".split("").map((char, i) => (
                 <motion.span
@@ -62,8 +62,8 @@ export default function Hero() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
-                    duration: 0.8,
-                    delay: 0.5 + i * 0.05,
+                    duration: 1.2,
+                    delay: 0.5 + i * 0.08,
                     ease: [0.215, 0.61, 0.355, 1],
                   }}
                   className="inline-block"
@@ -73,18 +73,19 @@ export default function Hero() {
               ))}
             </div>
             <motion.span
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent block mt-2"
+              initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1.5, delay: 1.5, ease: "easeOut" }}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary block mt-2 font-medium tracking-wide italic"
             >
               Bungsuna Transport
             </motion.span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-            Rasakan sensasi perjalanan mewah dengan armada Jetbus 5 terbaru.
-            Kenyamanan dan keamanan prioritas kami.
+          <p className="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 font-extralight leading-relaxed tracking-wide">
+            Rasakan sensasi perjalanan{" "}
+            <span className="text-brand-primary font-normal">mewah</span> dengan
+            armada Jetbus 5 terbaru. Kenyamanan dan keamanan prioritas kami.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

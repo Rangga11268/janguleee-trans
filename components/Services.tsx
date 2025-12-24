@@ -81,8 +81,8 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <SpotlightCard className="p-8 h-full group">
-                <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-black transition-all duration-300 group-hover:scale-110">
+              <SpotlightCard className="p-10 h-full group rounded-[2rem] border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-500 hover:shadow-[0_0_40px_rgba(229,197,114,0.1)]">
+                <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-primary mb-8 group-hover:bg-brand-primary group-hover:text-black transition-all duration-500 group-hover:scale-110 shadow-lg shadow-brand-primary/5">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand-primary transition-colors">

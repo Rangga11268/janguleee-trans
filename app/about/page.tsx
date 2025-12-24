@@ -53,7 +53,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+              className="group relative bg-white/5 backdrop-blur-md rounded-[2.5rem] p-10 border border-white/5 hover:border-brand-primary/40 transition-all duration-500 hover:shadow-[0_0_50px_rgba(229,197,114,0.15)]"
             >
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Target size={120} className="text-brand-primary" />
@@ -94,7 +94,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+              className="group relative bg-white/5 backdrop-blur-md rounded-[2.5rem] p-10 border border-white/5 hover:border-brand-primary/40 transition-all duration-500 hover:shadow-[0_0_50px_rgba(229,197,114,0.15)]"
             >
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Flag size={120} className="text-brand-primary" />
