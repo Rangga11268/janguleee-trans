@@ -5,10 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReservationModal from "./ReservationModal";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ export default function Navbar() {
         <Link href="/" className="flex flex-col items-start group">
           <div
             className={`relative transition-all duration-500 ${
-              scrolled ? "h-8 w-28" : "h-12 w-40"
+              scrolled ? "h-8 w-28" : "h-14 w-48"
             }`}
           >
             <Image
@@ -49,8 +51,8 @@ export default function Navbar() {
             />
           </div>
           <span
-            className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-white to-brand-primary bg-[length:200%_auto] animate-shimmer ${
-              scrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 mt-1"
+            className={`text-xs font-bold tracking-[0.3em] uppercase transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-white to-brand-primary bg-[length:200%_auto] animate-shimmer ${
+              scrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 mt-2"
             }`}
           >
             #BocahIngusan
@@ -68,15 +70,13 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <a
-            href="https://wa.me/628131573731"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="bg-gradient-to-r from-brand-primary to-brand-accent hover:to-white text-black px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-[0_0_25px_rgba(229,197,114,0.4)] hover:shadow-[0_0_40px_rgba(229,197,114,0.6)] duration-500 text-sm tracking-widest uppercase"
           >
             <Phone size={16} />
             Reservasi
-          </a>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -147,20 +147,25 @@ export default function Navbar() {
                 }}
                 className="w-full pt-8"
               >
-                <a
-                  href="https://wa.me/628131573731"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsModalOpen(true);
+                  }}
                   className="flex items-center justify-center gap-2 bg-brand-primary text-black w-full py-4 rounded-full font-bold text-lg hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)]"
                 >
                   <Phone size={20} />
                   Reservasi Sekarang
-                </a>
+                </button>
               </motion.div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+      <ReservationModal
+        isOpen={isModalOpen}
+        closeModal={() => setIsModalOpen(false)}
+      />
     </nav>
   );
 }

@@ -59,17 +59,34 @@ export default function Services() {
   return (
     <section id="services" className="py-24 bg-brand-dark relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-sm border-b border-brand-primary pb-1 mb-4 inline-block">
+        <div className="text-center mb-24">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-brand-primary font-bold tracking-[0.2em] uppercase text-sm border-b border-brand-primary pb-2 mb-6 inline-block"
+          >
             Layanan Kami
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl font-bold mb-8 text-white font-serif"
+          >
             Standard <span className="text-brand-primary">Pelayanan</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto font-light text-lg">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 max-w-2xl mx-auto font-light text-xl leading-relaxed"
+          >
             Komitmen kami untuk memberikan pengalaman perjalanan terbaik bagi
             setiap pelanggan.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

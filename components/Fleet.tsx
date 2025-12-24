@@ -11,7 +11,7 @@ const fleets = [
     body: "R25 - SCANIA K450CB",
     capacity: "Adjustable Seat (27 - 50)",
     image: "/assets/img/peremium/R25.jpg",
-    video: "/assets/video/R251.mp4",
+
     facilities: [
       "Kursi Premium Reclining",
       "Toilet & Dispenser",
@@ -214,14 +214,14 @@ export default function Fleet() {
   return (
     <section id="fleet" className="py-24 bg-black relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-sm border-b border-brand-primary pb-1 mb-4 inline-block">
+        <div className="text-center mb-24">
+          <span className="text-brand-primary font-bold tracking-[0.2em] uppercase text-sm border-b border-brand-primary pb-2 mb-6 inline-block">
             Armada Kami
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-white font-serif">
             Pilihan <span className="text-brand-primary">Unit Terbaik</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto font-light text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto font-light text-xl leading-relaxed">
             Setiap unit dirawat dengan standar tinggi untuk menjamin keamanan
             dan kenyamanan perjalanan Anda.
           </p>
