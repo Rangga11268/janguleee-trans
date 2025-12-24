@@ -53,14 +53,14 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/60 transition-all duration-500 hover:shadow-[0_0_50px_rgba(212,175,55,0.15)] overflow-hidden"
             >
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Target size={120} className="text-brand-primary" />
+              <div className="absolute -top-10 -right-10 p-8 opacity-[0.05] group-hover:opacity-10 transition-opacity duration-700 transform group-hover:rotate-12 group-hover:scale-125">
+                <Target size={200} className="text-brand-primary" />
               </div>
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-brand-primary/10 rounded-xl text-brand-primary group-hover:scale-110 transition-transform duration-500">
+              <div className="flex items-center gap-4 mb-8 relative z-10">
+                <div className="p-4 bg-brand-primary/10 rounded-2xl text-brand-primary group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
                   <Target size={32} />
                 </div>
                 <h3 className="text-3xl font-bold text-white font-serif">
@@ -68,20 +68,18 @@ export default function AboutPage() {
                 </h3>
               </div>
 
-              <p className="text-gray-300 text-lg leading-relaxed relative z-10">
+              <p className="text-gray-300 text-xl leading-relaxed relative z-10 font-light">
                 "Menjadi perusahaan transportasi pariwisata terdepan di Jawa
                 Barat yang mengutamakan{" "}
-                <span className="text-brand-primary font-medium">
+                <span className="text-brand-primary font-medium border-b border-brand-primary/30 pb-0.5">
                   keselamatan
                 </span>
-                ,
-                <span className="text-brand-primary font-medium">
-                  {" "}
+                ,{" "}
+                <span className="text-brand-primary font-medium border-b border-brand-primary/30 pb-0.5">
                   kenyamanan
                 </span>
-                , dan
-                <span className="text-brand-primary font-medium">
-                  {" "}
+                , dan{" "}
+                <span className="text-brand-primary font-medium border-b border-brand-primary/30 pb-0.5">
                   kepuasan pelanggan
                 </span>{" "}
                 dengan standar pelayanan premium."
@@ -94,14 +92,14 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/60 transition-all duration-500 hover:shadow-[0_0_50px_rgba(212,175,55,0.15)] overflow-hidden"
             >
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Flag size={120} className="text-brand-primary" />
+              <div className="absolute -top-10 -right-10 p-8 opacity-[0.05] group-hover:opacity-10 transition-opacity duration-700 transform group-hover:-rotate-12 group-hover:scale-125">
+                <Flag size={200} className="text-brand-primary" />
               </div>
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-brand-primary/10 rounded-xl text-brand-primary group-hover:scale-110 transition-transform duration-500">
+              <div className="flex items-center gap-4 mb-8 relative z-10">
+                <div className="p-4 bg-brand-primary/10 rounded-2xl text-brand-primary group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
                   <Flag size={32} />
                 </div>
                 <h3 className="text-3xl font-bold text-white font-serif">
@@ -109,7 +107,7 @@ export default function AboutPage() {
                 </h3>
               </div>
 
-              <ul className="space-y-4 relative z-10">
+              <ul className="space-y-5 relative z-10">
                 {[
                   "Menyediakan armada terbaru dengan fasilitas terlengkap.",
                   "Menjaga standar perawatan kendaraan secara berkala.",
@@ -122,13 +120,15 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                    className="flex items-start gap-3 text-gray-300 group/item"
+                    className="flex items-start gap-4 text-gray-300 group/item text-lg font-light"
                   >
-                    <CheckCircle
-                      className="text-brand-primary shrink-0 mt-1 group-hover/item:text-white transition-colors"
-                      size={18}
-                    />
-                    <span className="group-hover/item:translate-x-1 transition-transform">
+                    <div className="mt-1.5 p-1 rounded-full bg-white/5 group-hover/item:bg-brand-primary/20 transition-colors">
+                      <CheckCircle
+                        className="text-brand-primary shrink-0 group-hover/item:scale-110 transition-transform duration-300"
+                        size={16}
+                      />
+                    </div>
+                    <span className="group-hover/item:text-white transition-colors duration-300">
                       {item}
                     </span>
                   </motion.li>

@@ -54,7 +54,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight overflow-hidden">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight tracking-tight overflow-hidden font-serif">
             <div className="flex justify-center gap-2 md:gap-4 flex-wrap">
               {"Jang Uleee".split("").map((char, i) => (
                 <motion.span

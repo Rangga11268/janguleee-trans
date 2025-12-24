@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Massive CTA */}
         <div className="mb-32 border-b border-white/10 pb-20">
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 leading-tight">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 leading-tight font-serif">
             Siap untuk <br />
             <span className="text-brand-primary">Perjalanan Mewah?</span>
           </h2>
