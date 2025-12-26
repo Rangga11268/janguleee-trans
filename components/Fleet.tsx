@@ -43,19 +43,19 @@ const fleets = [
   },
 ];
 
-export default function Fleet() {
+export default function Fleet({ showButton = true }: { showButton?: boolean }) {
   return (
     <section id="fleet" className="py-24 bg-white relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <div>
             <h2 className="text-6xl md:text-8xl font-black text-black leading-tight tracking-tighter">
               OUR <br />
               <span className="text-[#008D85]">FLEET.</span>
             </h2>
           </div>
-          <p className="text-xl font-medium text-gray-500 max-w-sm text-right">
+          <p className="text-xl font-medium text-gray-500 max-w-sm text-left md:text-right">
             Premium units designed for maximum comfort and style.
           </p>
         </div>
@@ -140,15 +140,20 @@ export default function Fleet() {
             );
           })}
 
-          {/* 'More' Card */}
-          <div className="bg-brand-slate rounded-[2.5rem] flex flex-col justify-center items-center p-8 text-center group cursor-pointer hover:bg-black hover:text-white transition-colors duration-500 border border-transparent hover:border-black/50">
-            <h3 className="text-3xl font-bold mb-4">
-              See All <br /> Units
-            </h3>
-            <div className="w-16 h-16 rounded-full border-2 border-current flex items-center justify-center group-hover:scale-110 transition-transform">
-              <ArrowRight size={32} />
-            </div>
-          </div>
+          {/* 'More' Card - Only show if showButton is true */}
+          {showButton && (
+            <Link
+              href="/fleet"
+              className="bg-brand-slate rounded-[2.5rem] flex flex-col justify-center items-center p-8 text-center group cursor-pointer hover:bg-black hover:text-white transition-colors duration-500 border border-transparent hover:border-black/50"
+            >
+              <h3 className="text-3xl font-bold mb-4">
+                See All <br /> Units
+              </h3>
+              <div className="w-16 h-16 rounded-full border-2 border-current flex items-center justify-center group-hover:scale-110 transition-transform">
+                <ArrowRight size={32} />
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </section>

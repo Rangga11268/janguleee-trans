@@ -13,7 +13,7 @@ export default function FleetPage() {
     <main className="bg-white min-h-screen pt-24">
       <Navbar />
 
-      <FleetComponent />
+      <FleetComponent showButton={false} />
 
       <section className="py-32 bg-white relative overflow-hidden">
         {/* Background Noise & Gradient */}
