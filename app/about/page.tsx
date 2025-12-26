@@ -6,12 +6,16 @@ import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 import { Target, Flag, CheckCircle } from "lucide-react";
 
+import Timeline from "@/components/Timeline";
+import Stats from "@/components/Stats";
+
 export default function AboutPage() {
   return (
     <main className="bg-white min-h-screen pt-24">
       <Navbar />
 
       <AboutComponent />
+      <Stats />
 
       <section className="py-24 bg-brand-slate relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
@@ -101,6 +105,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Timeline />
 
       <Footer />
     </main>
