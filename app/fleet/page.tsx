@@ -10,19 +10,14 @@ import { motion } from "framer-motion";
 
 export default function FleetPage() {
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-white min-h-screen pt-24">
       <Navbar />
-      <PageHeader
-        title="Armada Kami"
-        subtitle="Pilihan Unit Terbaik Untuk Perjalanan Anda"
-        image="/assets/img/janguleebus2.jpg"
-      />
 
       <FleetComponent />
 
-      <section className="py-32 bg-black relative overflow-hidden">
+      <section className="py-32 bg-white relative overflow-hidden">
         {/* Background Noise & Gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary/5 via-black to-black opacity-50" />
+        <div className="absolute inset-0 bg-brand-slate opacity-50" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
@@ -40,7 +35,7 @@ export default function FleetPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif"
+              className="text-4xl md:text-6xl font-black text-black mb-6 tracking-tighter"
             >
               Sudut <span className="text-brand-primary">Kemewahan</span>
             </motion.h2>
@@ -49,7 +44,7 @@ export default function FleetPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-400 max-w-2xl mx-auto text-lg font-light"
+              className="text-gray-500 max-w-2xl mx-auto text-lg font-medium"
             >
               Intip lebih dekat detail interior dan eksterior armada premium
               kami.

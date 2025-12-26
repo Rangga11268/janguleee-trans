@@ -28,10 +28,10 @@ export default function PageHeader({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 font-serif tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tighter leading-none">
             {title}
           </h1>
-          <p className="text-base md:text-xl text-brand-primary font-medium tracking-wide uppercase px-4">
+          <p className="text-lg md:text-xl text-brand-primary font-bold tracking-widest uppercase px-4">
             {subtitle}
           </p>
         </motion.div>

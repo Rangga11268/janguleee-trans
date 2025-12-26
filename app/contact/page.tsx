@@ -1,140 +1,167 @@
-import PageHeader from "@/components/PageHeader";
-import Footer from "@/components/Footer";
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Footer from "@/components/Footer";
+import { ArrowLeft, Send } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function ContactPage() {
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    date: "",
+    passengers: "",
+    destination: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = `Halo Janguleee Trans, saya ingin reservasi:
+Nama: ${formData.name}
+Tanggal: ${formData.date}
+Jumlah Penumpang: ${formData.passengers}
+Tujuan: ${formData.destination}
+
+Mohon info ketersediaan unit. Terima kasih.`;
+
+    const whatsappUrl = `https://wa.me/628131573731?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-brand-slate min-h-screen">
       <Navbar />
-      <PageHeader
-        title="Hubungi Kami"
-        subtitle="Siap Melayani Kebutuhan Perjalanan Anda"
-        image="/assets/img/janguleebus1.jpg"
-      />
 
-      <section className="py-24 bg-brand-dark">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-4xl font-bold text-white mb-8 font-serif">
-                Informasi Kontak
-              </h2>
-              <p className="text-gray-400 mb-12 text-lg">
-                Jangan ragu untuk menghubungi kami. Tim kami siap membantu Anda
-                24/7 untuk konsultasi perjalanan dan reservasi.
-              </p>
+      <section className="pt-32 pb-24 px-4 min-h-screen flex flex-col justify-center">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Left: Heading & Info */}
+            <div className="bg-black text-white p-10 md:p-16 rounded-[3rem] flex flex-col justify-between min-h-[500px]">
+              <div>
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white mb-8 transition-colors"
+                >
+                  <ArrowLeft size={16} /> Back Home
+                </Link>
+                <h1 className="text-6xl md:text-7xl font-black leading-[0.9] tracking-tighter mb-6">
+                  LET'S
+                  <br />
+                  TALK.
+                </h1>
+                <p className="text-xl text-white/60 max-w-sm">
+                  Plan your trip with us. Fast response, premium service.
+                </p>
+              </div>
 
-              <div className="space-y-8">
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary flex-shrink-0">
-                    <MapPin size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-xl mb-2">
-                      Alamat Kantor
-                    </h4>
-                    <p className="text-gray-400">
-                      Sumedang, Jawa Barat, Indonesia
-                    </p>
-                  </div>
+              <div className="space-y-4">
+                <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                  <span className="block text-xs uppercase tracking-widest text-white/50 mb-1">
+                    WhatsApp
+                  </span>
+                  <span className="text-xl font-bold">+62 813-1573-731</span>
                 </div>
-
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary flex-shrink-0">
-                    <Phone size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-xl mb-2">
-                      Telepon / WhatsApp
-                    </h4>
-                    <p className="text-gray-400">+62 813-1573-731</p>
-                    <p className="text-sm text-brand-primary mt-1">
-                      Fast Response 24 Jam
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary flex-shrink-0">
-                    <Mail size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-xl mb-2">Email</h4>
-                    <p className="text-gray-400">info@janguleeetrans.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary flex-shrink-0">
-                    <Clock size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-xl mb-2">
-                      Jam Operasional
-                    </h4>
-                    <p className="text-gray-400">Senin - Minggu: 24 Jam</p>
-                  </div>
+                <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                  <span className="block text-xs uppercase tracking-widest text-white/50 mb-1">
+                    Location
+                  </span>
+                  <span className="text-xl font-bold">Sumedang, West Java</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-brand-slate p-12 rounded-[2.5rem] border border-white/5 hover:border-brand-primary/30 transition-all duration-500 shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-brand-primary/10 transition-colors duration-700" />
-              <h3 className="text-2xl font-bold text-white mb-6 font-serif">
-                Kirim Pesan
-              </h3>
-              <form className="space-y-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="group/input">
-                    <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within/input:text-brand-primary transition-colors">
-                      Nama Lengkap
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-primary/60 focus:ring-1 focus:ring-brand-primary/60 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] placeholder:text-white/20"
-                      placeholder="Nama Anda"
-                    />
-                  </div>
-                  <div className="group/input">
-                    <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within/input:text-brand-primary transition-colors">
-                      Nomor WhatsApp
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-primary/60 focus:ring-1 focus:ring-brand-primary/60 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] placeholder:text-white/20"
-                      placeholder="08xxx"
-                    />
-                  </div>
-                </div>
-                <div className="group/input">
-                  <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within/input:text-brand-primary transition-colors">
-                    Subjek
+            {/* Right: Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-10 md:p-16 rounded-[3rem] border border-black/5"
+            >
+              <h2 className="text-2xl font-bold mb-8 text-black">
+                Booking Details
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                    Your Name
                   </label>
                   <input
                     type="text"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-primary/60 focus:ring-1 focus:ring-brand-primary/60 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] placeholder:text-white/20"
-                    placeholder="Tanya Harga / Booking"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 font-bold text-black focus:outline-none focus:ring-2 focus:ring-black/5 placeholder:text-gray-300 transition-all"
+                    placeholder="e.g. Budi Santoso"
                   />
                 </div>
-                <div className="group/input">
-                  <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within/input:text-brand-primary transition-colors">
-                    Pesan
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-primary/60 focus:ring-1 focus:ring-brand-primary/60 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] placeholder:text-white/20 resize-none"
-                    placeholder="Tulis pesan Anda di sini..."
-                  ></textarea>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                      Date
+                    </label>
+                    <input
+                      type="date"
+                      name="date"
+                      value={formData.date}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 font-bold text-black focus:outline-none focus:ring-2 focus:ring-black/5 transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                      Passengers
+                    </label>
+                    <input
+                      type="number"
+                      name="passengers"
+                      value={formData.passengers}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 font-bold text-black focus:outline-none focus:ring-2 focus:ring-black/5 placeholder:text-gray-300 transition-all"
+                      placeholder="30"
+                    />
+                  </div>
                 </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                    Destination
+                  </label>
+                  <input
+                    type="text"
+                    name="destination"
+                    value={formData.destination}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-4 font-bold text-black focus:outline-none focus:ring-2 focus:ring-black/5 placeholder:text-gray-300 transition-all"
+                    placeholder="e.g. Yogyakarta"
+                  />
+                </div>
+
                 <button
-                  type="button"
-                  className="w-full bg-gradient-to-r from-brand-primary to-brand-accent text-black font-bold py-4 rounded-xl transition-all shadow-[0_5px_20px_rgba(212,175,55,0.2)] hover:shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:scale-[1.01] active:scale-[0.99]"
+                  type="submit"
+                  className="w-full bg-brand-primary text-white font-bold py-5 rounded-xl hover:bg-black transition-colors flex justify-center items-center gap-2 group"
                 >
-                  Kirim Pesan
+                  Send to WhatsApp
+                  <Send
+                    size={18}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

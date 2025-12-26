@@ -1,131 +1,152 @@
 "use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { ArrowRight, Play, ChevronDown } from "lucide-react";
-import Magnetic from "./Magnetic";
+import { motion } from "framer-motion";
+import { ArrowRight, Play, Star, MapPin, Shield } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const width = typeof window !== "undefined" ? window.innerWidth : 1000;
-  const height = typeof window !== "undefined" ? window.innerHeight : 800;
-
-  const mouseX = useTransform(x, [0, width], [-20, 20]);
-  const mouseY = useTransform(y, [0, height], [-20, 20]);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    x.set(e.clientX);
-    y.set(e.clientY);
-  };
-
   return (
-    <section
-      id="home"
-      className="relative h-screen w-full overflow-hidden bg-black"
-      onMouseMove={handleMouseMove}
-    >
-      {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="object-cover w-full h-full opacity-60"
-        >
-          <source src="/assets/video/comingsoonbus.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90" />
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+    <section className="min-h-screen bg-white pt-40 pb-12 px-4 md:px-8 flex flex-col justify-center">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 h-full">
+        {/* BIG TYPE BLOCK (Col-Span-8) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          style={{ x: mouseX, y: mouseY, rotateX: mouseY, rotateY: mouseX }}
-          className="perspective-1000 will-change-transform"
+          transition={{ duration: 0.5 }}
+          className="md:col-span-8 bg-brand-slate rounded-[2.5rem] p-8 md:p-16 flex flex-col justify-between relative overflow-hidden group min-h-[500px]"
         >
-          <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
-            <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-            <span className="text-gray-300 text-sm tracking-widest uppercase font-medium">
-              Premium Bus Charter
+          <div className="absolute top-8 right-8 flex gap-2">
+            <span className="px-4 py-2 bg-white rounded-full text-xs font-bold uppercase tracking-widest border border-black/5 shadow-sm">
+              Since 2015
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-tight tracking-tight overflow-hidden font-serif">
-            <div className="flex justify-center gap-2 md:gap-4 flex-wrap">
-              {"Jang Uleee".split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ y: 100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 1.2,
-                    delay: 0.5 + i * 0.08,
-                    ease: [0.215, 0.61, 0.355, 1],
-                  }}
-                  className="inline-block"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-            </div>
-            <motion.span
-              initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.5, delay: 1.5, ease: "easeOut" }}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary block mt-2 font-medium tracking-wide italic"
-            >
-              Bungsuna Transport
-            </motion.span>
-          </h1>
+          <div className="relative z-10 mt-auto">
+            <h1 className="text-[17vw] md:text-[8rem] font-black leading-[0.85] tracking-tighter text-black mb-4">
+              JANG
+              <br />
+              ULEEE
+            </h1>
+            <p className="text-xl md:text-2xl font-medium text-gray-500 tracking-tight max-w-md">
+              The Premium Bus Charter Experience.
+              <br />
+              <span className="text-brand-primary">#BocahIngusan</span>
+            </p>
+          </div>
 
-          <p className="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 font-extralight leading-relaxed tracking-wide">
-            Rasakan sensasi perjalanan{" "}
-            <span className="text-brand-primary font-normal">mewah</span> dengan
-            armada Jetbus 5 terbaru. Kenyamanan dan keamanan prioritas kami.
-          </p>
+          <div className="absolute inset-0 bg-gradient-to-tr from-gray-100/50 to-transparent pointer-events-none" />
+        </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Magnetic>
-              <a
-                href="https://wa.me/628131573731"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-brand-primary hover:bg-brand-accent text-black px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+        {/* SIDE COLUMN (Col-Span-4) */}
+        <div className="md:col-span-4 flex flex-col gap-4">
+          {/* VIDEO CARD / IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex-1 bg-black rounded-[2.5rem] relative overflow-hidden min-h-[300px] group"
+          >
+            <div className="absolute inset-0 opacity-80 group-hover:opacity-60 transition-opacity duration-500">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
               >
-                Booking Sekarang
-                <ArrowRight
-                  size={20}
-                  className="group-hover:translate-x-1 transition-transform"
+                <source
+                  src="/assets/video/comingsoonbus.mp4"
+                  type="video/mp4"
                 />
-              </a>
-            </Magnetic>
-            <Magnetic>
-              <a
-                href="#fleet"
-                className="group bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-3"
-              >
-                <Play size={18} className="fill-white" />
-                Lihat Armada
-              </a>
-            </Magnetic>
+              </video>
+            </div>
+
+            <div className="absolute bottom-8 left-8 right-8">
+              <div className="flex justify-between items-end">
+                <span className="text-white font-bold text-2xl">Reels</span>
+                <button className="w-12 h-12 rounded-full bg-white backdrop-blur-md flex items-center justify-center text-[#FF3B30] hover:bg-[#FF3B30] hover:text-white transition-all group">
+                  <Play
+                    size={20}
+                    className="fill-current group-hover:fill-white transition-colors"
+                  />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA CARD */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-[#FF3B30] rounded-[2.5rem] p-10 flex flex-col justify-between min-h-[250px] relative overflow-hidden group cursor-pointer hover:bg-black transition-colors duration-500"
+            onClick={() => window.open("https://wa.me/628131573731", "_blank")}
+          >
+            <div className="absolute top-0 right-0 p-8 opacity-20">
+              <ArrowRight size={100} className="-rotate-45" />
+            </div>
+
+            <div>
+              <h3 className="text-4xl font-bold text-white mb-2">Book Now</h3>
+              <p className="text-white/80 font-medium">
+                Start your journey today.
+              </p>
+            </div>
+
+            <div className="flex items-center justify-between mt-8">
+              <div className="flex -space-x-4">
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="w-10 h-10 rounded-full bg-white/20 border-2 border-transparent backdrop-blur-sm"
+                  />
+                ))}
+              </div>
+              <div className="w-12 h-12 rounded-full bg-white text-brand-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                <ArrowRight size={24} />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* STATS TICKER (Col-Span-12) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="md:col-span-12 bg-black rounded-[2rem] p-6 flex flex-wrap items-center justify-around gap-4 md:gap-8 overflow-hidden"
+        >
+          <div className="flex items-center gap-3 text-white">
+            <div className="p-2 bg-white/10 rounded-full">
+              <Star
+                size={18}
+                className="text-brand-primary fill-brand-primary"
+              />
+            </div>
+            <span className="font-bold uppercase tracking-wider text-sm">
+              Top Rated Service
+            </span>
+          </div>
+          <div className="w-px h-8 bg-white/10 hidden md:block" />
+          <div className="flex items-center gap-3 text-white">
+            <div className="p-2 bg-white/10 rounded-full">
+              <Shield size={18} className="text-brand-primary" />
+            </div>
+            <span className="font-bold uppercase tracking-wider text-sm">
+              Insurance Included
+            </span>
+          </div>
+          <div className="w-px h-8 bg-white/10 hidden md:block" />
+          <div className="flex items-center gap-3 text-white">
+            <div className="p-2 bg-white/10 rounded-full">
+              <MapPin size={18} className="text-brand-primary" />
+            </div>
+            <span className="font-bold uppercase tracking-wider text-sm">
+              Java - Bali Coverage
+            </span>
           </div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ delay: 2, duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2"
-      >
-        <span className="text-xs uppercase tracking-widest">Scroll Down</span>
-        <ChevronDown size={20} />
-      </motion.div>
     </section>
   );
 }

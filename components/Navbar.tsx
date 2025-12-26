@@ -29,74 +29,64 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out w-[90%] max-w-4xl rounded-full border border-black/5 ${
         scrolled
-          ? "bg-black/60 backdrop-blur-2xl py-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)] border-b border-white/5 supports-[backdrop-filter]:bg-black/40"
-          : "bg-transparent py-8"
+          ? "bg-white/80 backdrop-blur-xl py-3 px-6 shadow-xl shadow-black/5 supports-[backdrop-filter]:bg-white/60"
+          : "bg-white py-4 px-8 shadow-2xl"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <Link href="/" className="flex flex-col items-start group">
-          <div
-            className={`relative transition-all duration-500 ${
-              scrolled ? "h-8 w-28" : "h-14 w-48"
-            }`}
-          >
-            <Image
-              src="/assets/img/logonobg.png"
-              alt="Janguleee Trans Logo"
-              fill
-              className="object-contain object-left"
-              priority
-            />
-          </div>
-          <span
-            className={`text-xs font-bold tracking-[0.3em] uppercase transition-all duration-500 bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-white to-brand-primary bg-[length:200%_auto] animate-shimmer ${
-              scrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 mt-2"
-            }`}
-          >
-            #BocahIngusan
-          </span>
+      <div className="flex justify-between items-center w-full">
+        <Link href="/" className="flex items-center gap-2 group">
+          <Image
+            src="/assets/img/BlackLogo.png"
+            alt="Janguleee Trans"
+            width={160}
+            height={50}
+            className="h-14 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-white/80 hover:text-brand-primary transition-colors font-medium tracking-wide text-sm uppercase"
+              className="px-5 py-2 text-black hover:bg-gray-100 rounded-full transition-all font-medium text-sm"
             >
               {link.name}
             </Link>
           ))}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-gradient-to-r from-brand-primary to-brand-accent hover:to-white text-black px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center gap-2 shadow-[0_0_25px_rgba(229,197,114,0.4)] hover:shadow-[0_0_40px_rgba(229,197,114,0.6)] duration-500 text-sm tracking-widest uppercase"
-          >
-            <Phone size={16} />
-            Reservasi
-          </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-white hover:text-brand-primary transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[#FF3B30] hover:bg-black text-white px-5 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 text-sm shadow-lg shadow-red-500/20"
+          >
+            <Phone size={14} />
+            <span className="hidden sm:inline">Book Now</span>
+          </button>
+
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-black"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-0 top-[0px] bg-black/98 backdrop-blur-3xl z-40 flex flex-col justify-center items-center"
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 16 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 right-0 mt-2 bg-white rounded-[2rem] shadow-2xl border border-gray-100 p-4 flex flex-col gap-2 overflow-hidden"
           >
             <div className="absolute top-8 right-8">
               <button

@@ -1,9 +1,6 @@
 "use client";
 
-import PageHeader from "@/components/PageHeader";
 import AboutComponent from "@/components/About";
-import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
@@ -11,21 +8,12 @@ import { Target, Flag, CheckCircle } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-white min-h-screen pt-24">
       <Navbar />
-      <PageHeader
-        title="Tentang Kami"
-        subtitle="Mengenal Lebih Dekat Janguleee Trans"
-        image="/assets/img/janguleebus1.jpg"
-      />
 
       <AboutComponent />
 
       <section className="py-24 bg-brand-slate relative overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
-
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <motion.h2
@@ -33,17 +21,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
+              className="text-4xl md:text-6xl font-black text-black mb-6 tracking-tighter"
             >
-              Visi & <span className="text-brand-primary">Misi</span>
+              VISION & <span className="text-brand-primary">MISSION</span>
             </motion.h2>
-            <motion.div
-              initial={{ opacity: 0, width: 0 }}
-              whileInView={{ opacity: 1, width: "100px" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-1 bg-brand-primary mx-auto rounded-full"
-            />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -53,36 +34,27 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+              className="group relative bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 hover:shadow-2xl transition-all duration-500 overflow-hidden border border-black/5"
             >
-              <div className="absolute -top-10 -right-10 p-8 opacity-[0.05] group-hover:opacity-10 transition-opacity duration-700 transform group-hover:rotate-12 group-hover:scale-125">
-                <Target size={200} className="text-brand-primary" />
-              </div>
-
               <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="p-4 bg-brand-primary/10 rounded-2xl text-brand-primary group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                  <Target size={32} />
+                <div className="p-4 bg-brand-slate rounded-2xl text-black group-hover:bg-[#FF3B30] group-hover:text-white transition-all duration-500">
+                  <Target
+                    size={32}
+                    className="group-hover:text-white transition-colors"
+                  />
                 </div>
-                <h3 className="text-3xl font-bold text-white font-serif">
-                  Visi
+                <h3 className="text-3xl font-bold text-black group-hover:text-[#FF3B30] transition-colors">
+                  Our Vision
                 </h3>
               </div>
 
-              <p className="text-gray-300 text-xl leading-relaxed relative z-10 font-light">
-                "Menjadi perusahaan transportasi pariwisata terdepan di Jawa
-                Barat yang mengutamakan{" "}
-                <span className="text-brand-primary font-medium border-b border-brand-primary/30 pb-0.5">
-                  keselamatan
-                </span>
-                ,{" "}
-                <span className="text-brand-primary font-medium border-b border-brand-primary/30 pb-0.5">
-                  kenyamanan
-                </span>
-                , dan{" "}
-                <span className="text-brand-primary font-medium border-b border-brand-primary/30 pb-0.5">
-                  kepuasan pelanggan
-                </span>{" "}
-                dengan standar pelayanan premium."
+              <p className="text-gray-500 text-xl leading-relaxed relative z-10 font-medium group-hover:text-black transition-colors">
+                To be the #1 premium transport service in West Java,
+                prioritizing
+                <span className="text-brand-primary font-bold"> safety</span>,
+                <span className="text-brand-primary font-bold"> comfort</span>,
+                and
+                <span className="text-brand-primary font-bold"> style</span>.
               </p>
             </motion.div>
 
@@ -92,46 +64,37 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="group relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-brand-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]"
+              className="group relative bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 hover:shadow-2xl transition-all duration-500 overflow-hidden border border-black/5"
             >
-              <div className="absolute -top-10 -right-10 p-8 opacity-[0.05] group-hover:opacity-10 transition-opacity duration-700 transform group-hover:-rotate-12 group-hover:scale-125">
-                <Flag size={200} className="text-brand-primary" />
-              </div>
-
               <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="p-4 bg-brand-primary/10 rounded-2xl text-brand-primary group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                  <Flag size={32} />
+                <div className="p-4 bg-brand-slate rounded-2xl text-black group-hover:bg-[#FF3B30] group-hover:text-white transition-all duration-500">
+                  <Flag
+                    size={32}
+                    className="group-hover:text-white transition-colors"
+                  />
                 </div>
-                <h3 className="text-3xl font-bold text-white font-serif">
-                  Misi
+                <h3 className="text-3xl font-bold text-black group-hover:text-[#FF3B30] transition-colors">
+                  Our Mission
                 </h3>
               </div>
 
-              <ul className="space-y-5 relative z-10">
+              <ul className="space-y-4 relative z-10">
                 {[
-                  "Menyediakan armada terbaru dengan fasilitas terlengkap.",
-                  "Menjaga standar perawatan kendaraan secara berkala.",
-                  "Memiliki kru yang profesional, ramah, dan berpengalaman.",
-                  "Memberikan harga yang kompetitif dengan pelayanan terbaik.",
-                ].map((item, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                    className="flex items-start gap-4 text-gray-300 group/item text-lg font-light"
+                  "Provide the newest fleet (Jetbus 5).",
+                  "Ensure 100% safety maintenance.",
+                  "Deliver 5-star hospitality service.",
+                  "Make every trip unforgettable.",
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-gray-500 font-medium group-hover:text-black transition-colors"
                   >
-                    <div className="mt-1.5 p-1 rounded-full bg-white/5 group-hover/item:bg-brand-primary/20 transition-colors">
-                      <CheckCircle
-                        className="text-brand-primary shrink-0 group-hover/item:scale-110 transition-transform duration-300"
-                        size={16}
-                      />
-                    </div>
-                    <span className="group-hover/item:text-white transition-colors duration-300">
-                      {item}
-                    </span>
-                  </motion.li>
+                    <CheckCircle
+                      size={20}
+                      className="text-brand-primary shrink-0"
+                    />
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </motion.div>
@@ -139,8 +102,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Services />
-      <Testimonials />
       <Footer />
     </main>
   );

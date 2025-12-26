@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -17,170 +18,126 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white pt-32 pb-10 border-t border-white/10 relative overflow-hidden">
-      {/* Massive Background Text */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03]">
-        <h1 className="text-[20vw] font-bold text-white leading-none whitespace-nowrap">
-          JANGULEEE
-        </h1>
-      </div>
-
+    <footer className="bg-black text-white pt-24 pb-8 border-t border-white/10 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        {/* Massive CTA */}
-        <div className="mb-32 border-b border-white/10 pb-20">
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 leading-tight font-serif">
-            Siap untuk <br />
-            <span className="text-brand-primary">Perjalanan Mewah?</span>
-          </h2>
-          <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
+        {/* BIG FOOTER CTA */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-24 gap-12">
+          <div>
+            <h2 className="text-[12vw] lg:text-[10rem] font-black leading-[0.8] tracking-tighter text-white/20 select-none">
+              JANG
+              <br />
+              ULEEE
+            </h2>
+          </div>
+
+          <div className="lg:mb-12">
+            <h3 className="text-2xl font-bold mb-6">Ready to ride?</h3>
             <a
               href="https://wa.me/628131573731"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white text-black px-10 py-6 rounded-full font-bold text-xl transition-all hover:bg-brand-primary flex items-center gap-4"
+              className="group inline-flex items-center gap-4 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:bg-white hover:text-black"
             >
-              Booking Sekarang
+              Start Booking
               <ArrowRight
-                size={24}
-                className="group-hover:translate-x-2 transition-transform"
+                size={20}
+                className="group-hover:translate-x-1 transition-transform"
               />
             </a>
-            <p className="text-gray-400 max-w-md text-lg font-light">
-              Hubungi kami sekarang untuk mendapatkan penawaran terbaik untuk
-              perjalanan wisata Anda.
-            </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          {/* Brand Info */}
-          <div>
-            <h3 className="text-2xl font-bold mb-8 tracking-tighter">
-              Janguleee<span className="text-brand-primary">Trans</span>
-              <span className="block text-xs font-normal text-brand-primary tracking-[0.3em] mt-1 opacity-80">
-                #BocahIngusan
-              </span>
-            </h3>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-black hover:border-brand-primary transition-all duration-300"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-black hover:border-brand-primary transition-all duration-300"
-              >
-                <Facebook size={20} />
-              </a>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+          <div className="col-span-1 md:col-span-2">
+            <span className="font-bold text-lg tracking-tight block mb-4">
+              Janguleee Trans
+            </span>
+            <p className="text-gray-500 max-w-xs text-sm">
+              Premium bus charter service based in Sumedang, Indonesia. Serving
+              Java & Bali with style.
+            </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-8">
-              Menu
+            <h4 className="font-bold text-sm text-gray-500 mb-4 uppercase tracking-widest">
+              Navigation
             </h4>
-            <ul className="space-y-4 text-lg">
+            <ul className="space-y-2 text-sm font-medium">
               <li>
                 <a
                   href="#home"
-                  className="text-white hover:text-brand-primary transition-colors"
+                  className="hover:text-brand-primary transition-colors"
                 >
-                  Beranda
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="text-white hover:text-brand-primary transition-colors"
-                >
-                  Tentang Kami
+                  Home
                 </a>
               </li>
               <li>
                 <a
                   href="#fleet"
-                  className="text-white hover:text-brand-primary transition-colors"
+                  className="hover:text-brand-primary transition-colors"
                 >
-                  Armada
+                  Fleet
                 </a>
               </li>
               <li>
                 <a
-                  href="#services"
-                  className="text-white hover:text-brand-primary transition-colors"
+                  href="#about"
+                  className="hover:text-brand-primary transition-colors"
                 >
-                  Layanan
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="hover:text-brand-primary transition-colors"
+                >
+                  Contact
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-8">
-              Kontak
+            <h4 className="font-bold text-sm text-gray-500 mb-4 uppercase tracking-widest">
+              Connect
             </h4>
-            <ul className="space-y-6">
-              <li className="flex items-start gap-4 text-gray-300 group">
-                <MapPin size={24} className="text-brand-primary shrink-0" />
-                <span className="leading-relaxed">
-                  Sumedang, Jawa Barat, Indonesia
-                </span>
+            <ul className="space-y-2 text-sm font-medium">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
+                  Instagram
+                </a>
               </li>
-              <li className="flex items-center gap-4 text-gray-300 group">
-                <Phone size={24} className="text-brand-primary shrink-0" />
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
                 <a
                   href="https://wa.me/628131573731"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-brand-primary transition-colors"
                 >
-                  +62 813-1573-731
-                </a>
-              </li>
-              <li className="flex items-center gap-4 text-gray-300 group">
-                <Mail size={24} className="text-brand-primary shrink-0" />
-                <span className="hover:text-white transition-colors">
-                  info@janguleeetrans.com
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-8">
-              Legal
-            </h4>
-            <ul className="space-y-4 text-gray-400">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
+                  WhatsApp
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/10">
-          <p className="text-gray-500 text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} Jang Uleee Bungsuna Transport. All
-            rights reserved.
-          </p>
+        <div className="flex justify-between items-center pt-24 mt-4 text-[10px] text-gray-600 uppercase tracking-widest font-bold">
+          <span>&copy; {new Date().getFullYear()} Janguleee.</span>
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-sm text-white hover:text-brand-primary transition-colors uppercase tracking-widest font-bold"
+            className="hover:text-white transition-colors"
           >
-            Kembali ke Atas
-            <span className="p-2 rounded-full bg-white/10 group-hover:bg-brand-primary group-hover:text-black transition-all">
-              <ArrowUp size={16} />
-            </span>
+            Back to Top
           </button>
         </div>
       </div>

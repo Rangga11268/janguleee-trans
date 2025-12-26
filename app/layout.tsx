@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Playfair_Display } from "next/font/google";
+import { Outfit } from "next/font/google";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SmoothScroll from "@/components/SmoothScroll";
 import NoiseTexture from "@/components/NoiseTexture";
 import Preloader from "@/components/Preloader";
 
-const playfair = Playfair_Display({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata = {
@@ -26,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={`${playfair.variable}`}>
-      <body className="antialiased bg-black text-white selection:bg-brand-primary selection:text-black">
+    <html lang="id" className={`${outfit.variable} scroll-smooth`}>
+      <body className="antialiased bg-background text-foreground selection:bg-brand-primary selection:text-white">
         <Preloader />
         <SmoothScroll />
         <NoiseTexture />
