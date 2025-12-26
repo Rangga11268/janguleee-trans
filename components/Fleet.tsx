@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Star, Wifi, Info, Users } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 const fleets = [
@@ -100,30 +101,40 @@ export default function Fleet() {
                   <h3 className="text-4xl font-bold text-white mb-2 leading-none">
                     {fleet.name}
                   </h3>
-                  <p className="text-white/70 line-clamp-2 mb-6 font-medium">
-                    {fleet.highlight}
-                  </p>
+                  <p className="text-white/80 text-lg mb-6">{fleet.body}</p>
 
-                  <div className="flex flex-wrap gap-2 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-0 group-hover:h-auto overflow-hidden">
-                    {fleet.facilities.slice(0, 3).map((f, idx) => (
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {fleet.facilities.slice(0, 3).map((fac, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] uppercase font-bold px-2 py-1 bg-white/20 text-white rounded-md backdrop-blur-sm"
+                        className="text-xs font-bold text-white/90 bg-white/20 px-3 py-1 rounded-lg backdrop-blur-md"
                       >
-                        {f}
+                        {fac}
                       </span>
                     ))}
                   </div>
 
-                  <a
-                    href={`https://wa.me/628131573731?text=Saya%20tertarik%20booking%20unit%20${fleet.name}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold text-sm hover:bg-brand-primary hover:text-white transition-colors"
-                  >
-                    Book This Unit
-                    <ArrowRight size={16} />
-                  </a>
+                  <div className="flex flex-col gap-4">
+                    <Link
+                      href="/facilities"
+                      className="inline-flex items-center justify-center gap-2 bg-[#FF3B30] hover:bg-white hover:text-black text-white px-6 py-3 rounded-full font-bold transition-all text-sm group/btn w-full md:w-auto"
+                    >
+                      View Gallery
+                      <ArrowRight
+                        size={16}
+                        className="group-hover/btn:translate-x-1 transition-transform"
+                      />
+                    </Link>
+                    <a
+                      href={`https://wa.me/628131573731?text=Saya%20tertarik%20booking%20unit%20${fleet.name}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold text-sm hover:bg-gray-200 transition-colors w-full md:w-auto"
+                    >
+                      Book This Unit
+                      <ArrowRight size={16} />
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             );
