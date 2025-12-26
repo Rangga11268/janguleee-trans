@@ -42,7 +42,7 @@ export default function Navbar() {
             alt="Janguleee Trans"
             width={160}
             height={50}
-            className="h-14 w-auto object-contain"
+            className="h-10 w-auto object-contain"
           />
         </Link>
 
