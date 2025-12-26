@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Star, MapPin, Shield } from "lucide-react";
+import Magnetic from "@/components/Magnetic";
 import Image from "next/image";
 
 export default function Hero() {
@@ -58,6 +59,25 @@ export default function Hero() {
                   type="video/mp4"
                 />
               </video>
+            </div>
+
+            <div className="flex flex-wrap gap-4 mb-12 absolute bottom-24 left-8 right-8">
+              <Magnetic>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("fleet")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="bg-black hover:bg-[#008D85] text-white px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2 group shadow-xl hover:shadow-[#008D85]/30"
+                >
+                  Explore Fleet
+                  <ArrowRight
+                    size={20}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </button>
+              </Magnetic>
             </div>
 
             <div className="absolute bottom-8 left-8 right-8">
