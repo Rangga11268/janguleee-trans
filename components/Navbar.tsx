@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-[#FF3B30] hover:bg-black text-white px-5 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 text-sm shadow-lg shadow-red-500/20"
+            className="bg-[#008D85] hover:bg-black text-white px-5 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 text-sm shadow-lg shadow-[#008D85]/20"
           >
             <Phone size={14} />
             <span className="hidden sm:inline">Book Now</span>

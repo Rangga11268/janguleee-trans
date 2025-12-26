@@ -2,15 +2,15 @@
 
 :root {
   /* Base Colors */
-  --background: #f5f1e6;
-  --foreground: #1a0505;
+  --background: #f8f9fa; /* Platinum White */
+  --foreground: #09090b; /* Jet Black */
 
-  /* Ivory & Burgundy Palette */
-  --color-brand-primary: #7b011e; /* Rich Burgundy */
-  --color-brand-dark: #1a0505; /* Almost Black / Deep Burgundy */
-  --color-brand-light: #f5f1e6; /* Ivory Cream */
-  --color-brand-slate: #e6dcc3; /* Darker Cream for borders */
-  --color-brand-accent: #a31d38; /* Lighter Burgundy/Red */
+  /* Emerald Teal Palette */
+  --color-brand-primary: #008d85; /* Emerald Teal */
+  --color-brand-dark: #004d49; /* Deep Teal */
+  --color-brand-light: #f0fdfc; /* Mint White */
+  --color-brand-slate: #ccfbf1; /* Light Teal Slate */
+  --color-brand-accent: #14b8a6; /* Bright Teal Accent */
 
   /* Fonts */
   --font-sans: "Outfit", sans-serif;

@@ -59,7 +59,7 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white p-8 rounded-[2rem] hover:bg-black hover:text-white transition-all duration-300 group border border-black/5 hover:border-transparent flex flex-col justify-between h-[300px]"
             >
-              <div className="w-14 h-14 bg-brand-slate rounded-2xl flex items-center justify-center text-black mb-8 group-hover:bg-[#FF3B30] group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 bg-brand-slate rounded-2xl flex items-center justify-center text-black mb-8 group-hover:bg-[#008D85] group-hover:text-white transition-colors duration-300">
                 {/* Clone element to add hover class if it's a valid element */}
                 <div className="group-hover:text-white transition-colors">
                   {service.icon}

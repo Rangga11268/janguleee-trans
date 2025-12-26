@@ -37,13 +37,13 @@ export default function AboutPage() {
               className="group relative bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 hover:shadow-2xl transition-all duration-500 overflow-hidden border border-black/5"
             >
               <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="p-4 bg-brand-slate rounded-2xl text-black group-hover:bg-[#FF3B30] group-hover:text-white transition-all duration-500">
+                <div className="p-4 bg-brand-slate rounded-2xl text-black group-hover:bg-[#008D85] group-hover:text-white transition-all duration-500">
                   <Target
                     size={32}
                     className="group-hover:text-white transition-colors"
                   />
                 </div>
-                <h3 className="text-3xl font-bold text-black group-hover:text-[#FF3B30] transition-colors">
+                <h3 className="text-3xl font-bold text-black group-hover:text-[#008D85] transition-colors">
                   Our Vision
                 </h3>
               </div>
@@ -67,13 +67,13 @@ export default function AboutPage() {
               className="group relative bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 hover:shadow-2xl transition-all duration-500 overflow-hidden border border-black/5"
             >
               <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="p-4 bg-brand-slate rounded-2xl text-black group-hover:bg-[#FF3B30] group-hover:text-white transition-all duration-500">
+                <div className="p-4 bg-brand-slate rounded-2xl text-black group-hover:bg-[#008D85] group-hover:text-white transition-all duration-500">
                   <Flag
                     size={32}
                     className="group-hover:text-white transition-colors"
                   />
                 </div>
-                <h3 className="text-3xl font-bold text-black group-hover:text-[#FF3B30] transition-colors">
+                <h3 className="text-3xl font-bold text-black group-hover:text-[#008D85] transition-colors">
                   Our Mission
                 </h3>
               </div>

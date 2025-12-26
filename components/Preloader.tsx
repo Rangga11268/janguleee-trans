@@ -74,7 +74,7 @@ export default function Preloader() {
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.1, ease: "linear" }}
-                  className="h-full bg-[#FF3B30]"
+                  className="h-full bg-[#008D85]"
                 />
               </div>
             </div>

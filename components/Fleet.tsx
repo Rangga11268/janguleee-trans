@@ -52,7 +52,7 @@ export default function Fleet() {
           <div>
             <h2 className="text-6xl md:text-8xl font-black text-black leading-tight tracking-tighter">
               OUR <br />
-              <span className="text-brand-primary">FLEET.</span>
+              <span className="text-[#008D85]">FLEET.</span>
             </h2>
           </div>
           <p className="text-xl font-medium text-gray-500 max-w-sm text-right">
@@ -117,7 +117,7 @@ export default function Fleet() {
                   <div className="flex flex-col gap-4">
                     <Link
                       href="/facilities"
-                      className="inline-flex items-center justify-center gap-2 bg-[#FF3B30] hover:bg-white hover:text-black text-white px-6 py-3 rounded-full font-bold transition-all text-sm group/btn w-full md:w-auto"
+                      className="inline-flex items-center justify-center gap-2 bg-[#008D85] hover:bg-white hover:text-black text-white px-6 py-3 rounded-full font-bold transition-all text-sm group/btn w-full md:w-auto"
                     >
                       View Gallery
                       <ArrowRight

@@ -46,7 +46,7 @@ export default function About() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
               <div className="flex items-start gap-4 p-6 rounded-[2rem] bg-brand-slate border border-transparent hover:border-brand-primary/20 transition-colors group">
-                <div className="p-3 bg-white rounded-2xl text-black group-hover:bg-[#FF3B30] group-hover:text-white transition-colors shadow-sm duration-300">
+                <div className="p-3 bg-white rounded-2xl text-black group-hover:bg-[#008D85] group-hover:text-white transition-colors shadow-sm duration-300">
                   <MapPin
                     size={24}
                     className="group-hover:text-white transition-colors"
@@ -61,7 +61,7 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-4 p-6 rounded-[2rem] bg-brand-slate border border-transparent hover:border-brand-primary/20 transition-colors group">
-                <div className="p-3 bg-white rounded-2xl text-black group-hover:bg-[#FF3B30] group-hover:text-white transition-colors shadow-sm duration-300">
+                <div className="p-3 bg-white rounded-2xl text-black group-hover:bg-[#008D85] group-hover:text-white transition-colors shadow-sm duration-300">
                   <ShieldCheck
                     size={24}
                     className="group-hover:text-white transition-colors"

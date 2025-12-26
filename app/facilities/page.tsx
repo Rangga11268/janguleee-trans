@@ -70,18 +70,18 @@ export default function FacilitiesPage() {
             <div>
               <Link
                 href="/#fleet"
-                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-[#FF3B30] mb-4 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-[#008D85] mb-4 transition-colors"
               >
                 <ArrowLeft size={16} /> Back to Fleet
               </Link>
               <h1 className="text-6xl md:text-8xl font-black text-black leading-none tracking-tighter">
-                FACILITIES<span className="text-[#FF3B30]">.</span>
+                FACILITIES<span className="text-[#008D85]">.</span>
               </h1>
             </div>
             <p className="max-w-md text-right text-gray-500 font-medium text-lg">
               We don't just drive. We ensure you enjoy every second of the trip
               with{" "}
-              <span className="text-[#FF3B30] font-bold">
+              <span className="text-[#008D85] font-bold">
                 Premium Amenities
               </span>
               .

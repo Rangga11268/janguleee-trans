@@ -63,7 +63,7 @@ export default function Hero() {
             <div className="absolute bottom-8 left-8 right-8">
               <div className="flex justify-between items-end">
                 <span className="text-white font-bold text-2xl">Reels</span>
-                <button className="w-12 h-12 rounded-full bg-white backdrop-blur-md flex items-center justify-center text-[#FF3B30] hover:bg-[#FF3B30] hover:text-white transition-all group">
+                <button className="w-12 h-12 rounded-full bg-white backdrop-blur-md flex items-center justify-center text-[#008D85] hover:bg-[#008D85] hover:text-white transition-all group">
                   <Play
                     size={20}
                     className="fill-current group-hover:fill-white transition-colors"
@@ -78,7 +78,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-[#FF3B30] rounded-[2.5rem] p-10 flex flex-col justify-between min-h-[250px] relative overflow-hidden group cursor-pointer hover:bg-black transition-colors duration-500"
+            className="bg-[#008D85] rounded-[2.5rem] p-10 flex flex-col justify-between min-h-[250px] relative overflow-hidden group cursor-pointer hover:bg-black transition-colors duration-500"
             onClick={() => window.open("https://wa.me/628131573731", "_blank")}
           >
             <div className="absolute top-0 right-0 p-8 opacity-20">
