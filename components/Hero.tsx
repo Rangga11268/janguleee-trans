@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-white pt-20 pb-12 px-4 md:px-8 flex flex-col justify-center">
+    <section className="min-h-screen bg-white pt-24 pb-12 px-4 md:px-8 flex flex-col justify-center">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 h-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
