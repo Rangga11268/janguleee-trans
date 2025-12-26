@@ -6,13 +6,13 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-white pt-27 pb-12 px-4 md:px-8 flex flex-col justify-center">
+    <section className="min-h-screen bg-white pt-32 pb-12 px-4 md:px-8 flex flex-col justify-center">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 h-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="md:col-span-8 bg-brand-slate rounded-[2.5rem] p-8 md:p-16 flex flex-col justify-between relative overflow-hidden group min-h-[500px]"
+          className="md:col-span-8 bg-brand-slate rounded-[2.5rem] p-8 md:p-16 flex flex-col md:justify-between relative overflow-hidden group min-h-[400px] md:min-h-[500px]"
         >
           <div className="absolute top-8 right-8 flex gap-2">
             <span className="px-4 py-2 bg-white rounded-full text-xs font-bold uppercase tracking-widest border border-black/5 shadow-sm">
@@ -20,7 +20,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <div className="relative z-10 mt-auto">
+          <div className="relative z-10 mt-24 md:mt-auto">
             <h1 className="text-[17vw] md:text-[8rem] font-black leading-[0.85] tracking-tighter text-black mb-4">
               JANG
               <br />
