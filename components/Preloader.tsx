@@ -6,80 +6,125 @@ import Image from "next/image";
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
+  const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    // Tweak timing for a snappier feel
+    setDimension({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+      window.scrollTo(0, 0);
+    }, 2500);
 
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + 1;
-      });
-    }, 15);
-
-    return () => {
-      clearTimeout(timer);
-      clearInterval(interval);
-    };
+    return () => clearTimeout(timer);
   }, []);
+
+  // Curve for the slide-up animation (SVG Path)
+  const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
+    dimension.height
+  } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
+    dimension.height
+  }  L0 0`;
+  
+  const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} 0 Q${
+    dimension.width / 2
+  } 0 0 0 L0 0`;
+
+  const curve: any = {
+    initial: {
+      d: initialPath,
+      transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] },
+    },
+    exit: {
+      d: targetPath,
+      transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
+    },
+  };
 
   return (
     <AnimatePresence mode="wait">
       {isLoading && (
-        <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
-          exit={{
-            y: "-100%",
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
-          }}
-        >
-          <div className="relative w-full max-w-md px-4 flex flex-col items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8 relative"
+        <>
+           {/* MAIN PRELOADER */}
+          <motion.div
+            className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#111] text-white overflow-hidden cursor-wait"
+            exit={{
+              y: "-100vh",
+              transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
+            }}
+          >
+             {/* CONTENT CONTAINER */}
+            <motion.div 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               exit={{ opacity: 0, y: -50 }}
+               transition={{ duration: 0.5 }}
+               className="relative z-10 flex flex-col items-center justify-center px-4"
             >
-              <div className="relative w-48 h-auto mb-8">
-                <Image
-                  src="/assets/img/PreloaderLogo.png"
-                  alt="Janguleee Logo"
-                  width={300}
-                  height={300}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
+                {/* LOGO WITH BREATHING ANIMATION */}
+                <motion.div 
+                  className="w-48 md:w-72 mb-8"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    opacity: [0.8, 1, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    ease: "easeInOut" 
+                  }}
+                >
+                     <Image
+                        src="/assets/img/logonobg.png"
+                        alt="Janguleee"
+                        width={400}
+                        height={150}
+                        className="w-full h-auto object-contain brightness-0 invert drop-shadow-2xl" 
+                     />
+                </motion.div>
+
+                <div className="flex flex-col items-center gap-3">
+                    <p className="text-gray-400 font-medium tracking-[0.5em] uppercase text-xs md:text-sm animate-pulse">
+                        PREPARING YOUR JOURNEY
+                    </p>
+                    {/* Animated Dots */}
+                    <div className="flex gap-2 mt-2">
+                        {[0, 1, 2].map((i) => (
+                           <motion.div
+                             key={i}
+                             className="w-2 h-2 rounded-full bg-[#008D85]"
+                             animate={{ y: [0, -10, 0] }}
+                             transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.1 }}
+                           />
+                        ))}
+                    </div>
+                </div>
             </motion.div>
 
-            <div className="w-full relative">
-              <div className="flex justify-between items-end mb-2">
-                <span className="text-black font-bold uppercase tracking-widest text-sm">
-                  Loading Resources
-                </span>
-                <span className="text-6xl font-black text-black tracking-tighter">
-                  {progress}%
-                </span>
-              </div>
-
-              <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${progress}%` }}
-                  transition={{ duration: 0.1, ease: "linear" }}
-                  className="h-full bg-[#008D85]"
+            {/* CURTAIN REVEAL EFFECT (SVG CURVE) */}
+            {dimension.width > 0 && (
+              <svg className="absolute top-0 w-full h-[calc(100%_+_300px)] pointer-events-none fill-[#111] z-0 hidden">
+                <motion.path
+                  variants={curve}
+                  initial="initial"
+                  exit="exit"
                 />
-              </div>
-            </div>
-          </div>
-        </motion.div>
+              </svg>
+            )}
+          </motion.div>
+          
+          {/* SECONDARY LAYER (ACCENT FLASH) */}
+          <motion.div 
+             className="fixed inset-0 z-[9998] bg-[#008D85]"
+             initial={{ y: 0 }}
+             exit={{ 
+                y: "-100vh",
+                transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.4 } 
+             }}
+          />
+        </>
       )}
     </AnimatePresence>
   );
