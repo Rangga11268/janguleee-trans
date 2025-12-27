@@ -27,41 +27,13 @@ export default function Hero() {
               <br />
               ULEEE
             </h1>
-            <p className="text-xl md:text-2xl font-medium text-gray-500 tracking-tight max-w-md">
+            <p className="text-xl md:text-2xl font-medium text-gray-500 tracking-tight max-w-md mb-8">
               The Premium Bus Charter Experience.
               <br />
               <span className="text-brand-primary">#BocahIngusan</span>
             </p>
-          </div>
 
-          <div className="absolute inset-0 bg-gradient-to-tr from-gray-100/50 to-transparent pointer-events-none" />
-        </motion.div>
-
-        {/* SIDE COLUMN (Col-Span-4) */}
-        <div className="md:col-span-4 flex flex-col gap-4">
-          {/* VIDEO CARD / IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex-1 bg-black rounded-[2.5rem] relative overflow-hidden min-h-[300px] group"
-          >
-            <div className="absolute inset-0 opacity-80 group-hover:opacity-60 transition-opacity duration-500">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source
-                  src="/assets/video/comingsoonbus.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-
-            <div className="flex flex-wrap gap-4 mb-12 absolute bottom-24 left-8 right-8">
+            <div className="flex flex-wrap gap-4">
               <Magnetic>
                 <button
                   onClick={() =>
@@ -79,10 +51,40 @@ export default function Hero() {
                 </button>
               </Magnetic>
             </div>
+          </div>
 
-            <div className="absolute bottom-8 left-8 right-8">
+          <div className="absolute inset-0 bg-gradient-to-tr from-gray-100/50 to-transparent pointer-events-none" />
+        </motion.div>
+
+        {/* SIDE COLUMN (Col-Span-4) */}
+        <div className="md:col-span-4 flex flex-col gap-4">
+          {/* VIDEO CARD / IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex-1 bg-black rounded-[2.5rem] relative overflow-hidden min-h-[400px] group"
+          >
+            <div className="absolute inset-0 opacity-80 group-hover:opacity-60 transition-opacity duration-500">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source
+                  src="/assets/video/comingsoonbus.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
               <div className="flex justify-between items-end">
-                <span className="text-white font-bold text-2xl">Reels</span>
+                <span className="text-white font-bold text-2xl shadow-black/20 drop-shadow-lg">
+                  Reels
+                </span>
                 <button className="w-12 h-12 rounded-full bg-white backdrop-blur-md flex items-center justify-center text-[#008D85] hover:bg-[#008D85] hover:text-white transition-all group">
                   <Play
                     size={20}
