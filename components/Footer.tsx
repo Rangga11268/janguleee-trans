@@ -131,11 +131,34 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-between items-center pt-24 mt-4 text-[10px] text-gray-600 uppercase tracking-widest font-bold">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-24 mt-4 gap-6 text-[10px] text-gray-500 uppercase tracking-widest font-bold">
           <span>&copy; {new Date().getFullYear()} Janguleee.</span>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-2 group order-3 md:order-2"
+          >
+            <span className="text-gray-600">Digital Architect</span>
+            <span className="w-4 h-px bg-white/10 group-hover:bg-brand-primary transition-colors"></span>
+            <a
+              href="https://github.com/Rangga11268?tab=overview&from=2025-12-01&to=2025-12-31"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-brand-primary transition-all flex items-center gap-1.5"
+            >
+              Darell Rangga
+              <ArrowUp
+                size={10}
+                className="rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              />
+            </a>
+          </motion.div>
+
           <button
             onClick={scrollToTop}
-            className="hover:text-white transition-colors"
+            className="hover:text-white transition-colors order-2 md:order-3"
           >
             Back to Top
           </button>
