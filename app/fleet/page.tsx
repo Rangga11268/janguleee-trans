@@ -62,7 +62,7 @@ export default function FleetPage() {
             >
               <SpotlightCard className="h-full w-full p-0 overflow-hidden group border-white/10 hover:border-brand-primary/50 bg-black/50 backdrop-blur-sm">
                 <Image
-                  src="/assets/img/janguleebus2.jpg"
+                  src="/assets/img/janguleebus2.webp"
                   alt="Exterior Jetbus 5"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -90,7 +90,7 @@ export default function FleetPage() {
             >
               <SpotlightCard className="h-full w-full p-0 overflow-hidden group border-white/10 hover:border-brand-primary/50 bg-black/50 backdrop-blur-sm">
                 <Image
-                  src="/assets/img/peremium/R25.jpg"
+                  src="/assets/img/peremium/R25.webp"
                   alt="Premium R25"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -115,7 +115,7 @@ export default function FleetPage() {
             >
               <SpotlightCard className="h-full w-full p-0 overflow-hidden group border-white/10 hover:border-brand-primary/50 bg-black/50 backdrop-blur-sm">
                 <Image
-                  src="/assets/img/peremium/Kursi Peremium.jpg"
+                  src="/assets/img/peremium/Kursi Peremium.webp"
                   alt="Interior Luxury"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -140,7 +140,7 @@ export default function FleetPage() {
             >
               <SpotlightCard className="h-full w-full p-0 overflow-hidden group border-white/10 hover:border-brand-primary/50 bg-black/50 backdrop-blur-sm">
                 <Image
-                  src="/assets/img/peremium/Toilet.jpg"
+                  src="/assets/img/peremium/Toilet.webp"
                   alt="Fasilitas Toilet"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -166,7 +166,7 @@ export default function FleetPage() {
             >
               <SpotlightCard className="h-full w-full p-0 overflow-hidden group border-white/10 hover:border-brand-primary/50 bg-black/50 backdrop-blur-sm">
                 <Image
-                  src="/assets/img/peremium/Dispenser.jpg"
+                  src="/assets/img/peremium/Dispenser.webp"
                   alt="Fasilitas Dispenser"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"

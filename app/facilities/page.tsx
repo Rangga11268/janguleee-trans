@@ -9,49 +9,49 @@ import { motion } from "framer-motion";
 
 const facilityImages = [
   {
-    src: "/assets/img/fasilitas/kursipremium.jpg",
+    src: "/assets/img/fasilitas/kursipremium.webp",
     title: "Premium Seats",
     desc: "Reclining comfort.",
     colSpan: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "/assets/img/fasilitas/kursipremium2.jpg",
+    src: "/assets/img/fasilitas/kursipremium2.webp",
     title: "Luxury Interior",
     desc: "Elegant design.",
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
-    src: "/assets/img/fasilitas/TvDepan.jpg",
+    src: "/assets/img/fasilitas/TvDepan.webp",
     title: "Android TV",
     desc: "Smart entertainment.",
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
-    src: "/assets/img/fasilitas/TvBelakangjpg.jpg",
+    src: "/assets/img/fasilitas/TvBelakangjpg.webp",
     title: "Central TV",
     desc: "View for everyone.",
     colSpan: "md:col-span-2 md:row-span-1",
   },
   {
-    src: "/assets/img/fasilitas/lampudisco.jpg",
+    src: "/assets/img/fasilitas/lampudisco.webp",
     title: "Disco Light",
     desc: "Party mode on.",
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
-    src: "/assets/img/fasilitas/speaker1.jpg",
+    src: "/assets/img/fasilitas/speaker1.webp",
     title: "Premium Audio",
     desc: "Crystal clear sound.",
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
-    src: "/assets/img/fasilitas/dispenser.jpg",
+    src: "/assets/img/fasilitas/dispenser.webp",
     title: "Dispenser",
     desc: "Hot & Cold water.",
     colSpan: "md:col-span-1 md:row-span-1",
   },
   {
-    src: "/assets/img/fasilitas/coolbox.jpg",
+    src: "/assets/img/fasilitas/coolbox.webp",
     title: "Coolbox",
     desc: "Keep drinks fresh.",
     colSpan: "md:col-span-1 md:row-span-1",

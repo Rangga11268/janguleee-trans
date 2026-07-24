@@ -16,7 +16,7 @@ export default function Preloader() {
     const timer = setTimeout(() => {
       setIsLoading(false);
       window.scrollTo(0, 0);
-    }, 2500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);

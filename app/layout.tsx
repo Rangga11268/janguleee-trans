@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Outfit } from "next/font/google";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import SmoothScroll from "@/components/SmoothScroll";
-import NoiseTexture from "@/components/NoiseTexture";
 import Preloader from "@/components/Preloader";
 
 const outfit = Outfit({
@@ -82,8 +80,6 @@ export default function RootLayout({
     <html lang="id" className={`${outfit.variable} scroll-smooth`}>
       <body className="antialiased bg-background text-foreground selection:bg-brand-primary selection:text-white">
         <Preloader />
-        <SmoothScroll />
-        <NoiseTexture />
         {children}
         <FloatingWhatsApp />
         <script
