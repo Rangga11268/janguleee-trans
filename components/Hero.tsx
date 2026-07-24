@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Star, MapPin, Shield } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import Magnetic from "@/components/Magnetic";
-import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -27,8 +26,8 @@ export default function Hero() {
               <br />
               ULEEE
             </h1>
-            <p className="text-xl md:text-2xl font-medium text-gray-500 tracking-tight max-w-md mb-8">
-              The Premium Bus Charter Experience.
+            <p className="text-xl md:text-2xl font-medium text-gray-500 tracking-tight max-w-lg mb-8">
+              Pengalaman sewa bus premium di Sumedang, Bandung &amp; Majalengka.
               <br />
               <span className="text-brand-primary">#BocahIngusan</span>
             </p>
@@ -129,44 +128,6 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-
-        {/* STATS TICKER (Col-Span-12) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="md:col-span-12 bg-black rounded-[2rem] p-6 flex flex-wrap items-center justify-around gap-4 md:gap-8 overflow-hidden"
-        >
-          <div className="flex items-center gap-3 text-white">
-            <div className="p-2 bg-white/10 rounded-full">
-              <Star
-                size={18}
-                className="text-brand-primary fill-brand-primary"
-              />
-            </div>
-            <span className="font-bold uppercase tracking-wider text-sm">
-              Top Rated Service
-            </span>
-          </div>
-          <div className="w-px h-8 bg-white/10 hidden md:block" />
-          <div className="flex items-center gap-3 text-white">
-            <div className="p-2 bg-white/10 rounded-full">
-              <Shield size={18} className="text-brand-primary" />
-            </div>
-            <span className="font-bold uppercase tracking-wider text-sm">
-              Insurance Included
-            </span>
-          </div>
-          <div className="w-px h-8 bg-white/10 hidden md:block" />
-          <div className="flex items-center gap-3 text-white">
-            <div className="p-2 bg-white/10 rounded-full">
-              <MapPin size={18} className="text-brand-primary" />
-            </div>
-            <span className="font-bold uppercase tracking-wider text-sm">
-              Java - Bali Coverage
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

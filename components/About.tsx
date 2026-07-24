@@ -21,14 +21,19 @@ export default function About() {
           >
             <div className="mb-6">
               <span className="text-brand-primary font-black tracking-widest uppercase text-sm border-b-2 border-brand-primary pb-1">
-                Tentang Kami
+                Kenapa Janguleee?
               </span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-black mb-8 text-black leading-none tracking-tighter">
-              Why Choose <br />
-              <span className="text-brand-primary">Janguleee?</span>
+            <h2 className="text-5xl md:text-6xl font-black mb-4 text-black leading-none tracking-tighter">
+              Cari Bus Pariwisata yang{" "}
+              <span className="text-brand-primary">Bener?</span>
             </h2>
+
+            <p className="text-lg text-gray-500 font-medium mb-8 max-w-xl">
+              Udah bayar mahal tapi AC kurang dingin? Armada nggak sesuai foto?
+              Sopir ugal-ugalan? Tenang, lo di tempat yang tepat.
+            </p>
 
             <div className="space-y-6 text-lg text-gray-600 font-medium font-sans">
               <p>
