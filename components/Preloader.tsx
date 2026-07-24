@@ -77,7 +77,7 @@ export default function Preloader() {
                   }}
                 >
                      <Image
-                        src="/assets/img/logonobg.png"
+                        src="/assets/img/logonobg.webp"
                         alt="Janguleee"
                         width={400}
                         height={150}

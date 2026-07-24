@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center w-full">
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src="/assets/img/BlackLogo.png"
+            src="/assets/img/BlackLogo.webp"
             alt="Janguleee Trans"
             width={160}
             height={50}
